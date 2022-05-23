@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ja变量</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        一、变量命名规则：由数字 字母 下划线) $ 但不能以数字开头
+        变量就是在内存中申请一个空的内存来存放数据
+
+        二、变量初始化：变量的声明和赋值
+        声明变量但不赋值，结果为undefined
+        不声明 直接报错 --> js为单线程，报错后后面的代码就不会再运行了
+
+        */
+        var a = 10;
+        var b;
+        c = 20 ; //不建议不声明即赋值
+        console.log(a);
+        // console.log(e);
+        console.log(b);
+        console.log(c);
+
+        // 驼峰命名法:首字母小写，后面每个单词首字母大写
+        var userName = "张三";
+
+        // 同时声明多个变量
+        var a1 = 10,
+            a2 = 20,
+            a3 = 30;
+    </script>
+</body>
+
+</html>

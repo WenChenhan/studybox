@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js数据类型</title>
+</head>
+
+<body>
+    <script>
+        // js是一门弱类型的语言，声明变量时不用声明变量的数据类型
+        // 在程序运行过程中变量的数据类型才会被确定
+        var a = "啊对对对";
+        var a = 10;
+        console.log(a);
+        console.log(a + 5);
+
+        // 1.基本数据类型：数字Number；字符串String；布尔值Boolean；Undefined；Null
+        // Number：整数型：12345..；浮点型：1.1、1.2.。。；三个特殊值：Infinity，-Infinity，NaN
+        console.log(Infinity);
+        console.log(-Infinity);
+        console.log(NaN);
+
+        var max = Number.MAX_VALUE;//数值类型的最大值
+        console.log(max);
+        var min = Number.MIN_VALUE; //数值类型的最小值
+        console.log(min);
+        var b = "a1223532413";
+        var jg = isNaN(b);//判断是否为数值
+        console.log(jg);
+
+
+
+        // String：用引号""或者''包起来
+        var b1 = "我是'张三'";//字符串嵌套：单引号双引号嵌套使用，不能同时使用
+        console.log(b1);
+        var length = b1.length;//通过length获取字符串的长度
+        console.log(length);
+        var b2 = "我是字符串1";
+        var b3 = "我是字符串2";
+        var b4 = b2 + b3;
+        console.log(b4);//两个字符串通过 + 来拼接
+        var c1 = "字符串3";
+        var c2 = 10;
+        console.log(c1+c2);//字符串和任何类型的数据拼接之后都会变成字符串
+        var c3 = "10";
+        var c4 = 10;
+        console.log(c3 + c4);
+
+        var name = "张三";
+        var age = 8;
+        console.log("我的名字叫"+name+",今年"+age+"岁。");
+
+        // Boolean:true / false 等价于 1 / 0
+        var flag = true;
+        console.log(flag + 5);//布尔值子啊进行算数运算时，会先进行隐式转换再进行算数运算
+
+
+
+
+        // Undefined：未定义的
+        // Null：空值
+
+
+
+    </script>
+</body>
+
+</html>

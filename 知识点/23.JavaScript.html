@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基础</title>
+    <!-- 
+        JavaScript:交互 动态效果 前后端数据交互
+        1.ECMASCRIPT：js语法
+        2.DOM：文档对象模型/通过dom提供的接口对页面上的元素进行操作
+        3.BOM：浏览器对象模型/通过接口对浏览器窗口进行操作
+
+        运行环境：浏览器中的引擎
+        1.渲染引擎：内核 --  解析html和css代码，渲染到页面
+        2.js引擎：v8
+
+        js语法：
+        1.行内式
+        2.内联式：<script></script>标签
+        3.外联式
+     -->
+     <script src="js/jafirstclass.js"></script>
+</head>
+<body>
+    <!-- 行内式 -->
+    <button onclick="javascriot:alert('试试就试试')">点我试试</button>
+
+    <script>
+        // js代码:一般放在结束body前
+
+        // js输出语句：
+        // 1.console.log：打印到控制台
+        var a = 12;
+        console.log(a);
+        // 2.alert:页面弹窗
+        alert('我是一个弹窗')
+        // 3.document.write(''):把内容追加到html的最后
+        document.write('输出');
+    </script>
+</body>
+</html>
