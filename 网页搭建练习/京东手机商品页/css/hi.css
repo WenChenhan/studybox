@@ -1,0 +1,80 @@
+.header-left-box-hi {
+    width: 660px;
+    height: 170px;
+    border: 1px solid rgb(204, 204, 204);
+    position: absolute;
+    top: 20px;
+    background-color: white;
+    z-index: 99;
+    left: -1px;
+    display: none;
+}
+
+.header-left-box-hi-1 {
+    width: 220px;
+    height: 65px;
+    overflow: hidden;
+    float: left;
+    padding: 10px 0px;
+    border-bottom: 1px dotted rgb(204, 204, 204);
+}
+
+.header-left-box-hi-1-img {
+    width: 65px;
+    height: 65px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.header-left-box-hi-1 a {
+    display: block;
+    float: left;
+    width: 155px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.header-left-box-hi-1 b {
+    display: block;
+    color: red;
+    font-size: 16px;
+    padding: 5px 0px;
+    float: left;
+
+}
+
+.header-left-box-hi-link a {
+    display: block;
+    width: 117px;
+    float: left;
+    font-size: 12px;
+    color: #666666;
+    padding: 10px 0px;
+    margin-left: 15px;
+}
+
+.header-left-box-hi-1 a:hover {
+    color: red;
+}
+
+.header-left-box-hi-link a:hover {
+    color: red;
+}
+
+.header-left-box-zd{
+    width: 68px;
+    height: 5px;
+    position: absolute;
+    top: 18px;
+    background-color: white;
+    z-index: 999;
+    display: none;
+}
+
+.header-left-box:hover>.header-left-box-hi{
+    display: block;
+}
+
+.header-left-box:hover>.header-left-box-zd{
+    display: block;
+}

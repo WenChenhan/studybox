@@ -1,0 +1,28 @@
+.daohanglan {
+  background-color: rgb(51, 51, 51);
+  height: 50px;
+  overflow: hidden;
+}
+
+.a1 {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "黑体";
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 12px;
+  float: left;
+  border-left: 0.5px rgb(80, 80, 80) solid;
+}
+
+.a1:hover {
+  color: rgb(51, 51, 51);
+  background-color: aliceblue;
+}
+
+#firsta {
+  border: 0px;
+  margin-left: 100px;
+}

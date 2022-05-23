@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        .big {
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            color: white;
+            font-size: 100px;
+            font-weight: 800;
+            text-align: center;
+            line-height: 200px;
+            margin: 200px 100px;
+            /* 动画名字 */
+            animation-name: dh;
+            /* 完成时间 */
+            animation-duration: 4s;
+            /* 延迟时间 */
+            animation-delay: 0s;
+            /* 完成后时候返回  backwards返回  forwards不返回*/
+            animation-fill-mode: forwards;
+            /* 动画曲线 */
+            animation-timing-function: ease;
+            /* 时候循环 */
+            animation-iteration-count: 1;
+            /* 是否逆向播放 */
+            animation-direction: normal;
+
+        }
+
+        @keyframes dh {
+
+            10% {
+                margin-left: 100px;
+                transform: rotate(0deg) scale(1);
+
+            }
+
+            25% {
+                transform: rotate(0deg) scale(3);
+            }
+
+
+            40% {
+                margin-left: 1500px;
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                margin-left: 1500px;
+                transform: rotate(0deg) scale(1);
+            }
+
+            60% {
+                margin-top: 200px;
+                margin-left: 1500px;
+                transform: rotate(0deg);
+            }
+
+            75% {
+                margin-top: 100px;
+            }
+
+            100% {
+                transform: rotate(-720deg);
+                margin-left: 100px;
+            }
+        }
+
+
+        .zhi{
+            position: fixed;
+            left: 500px;
+            top: 800px;
+            width: 0px;
+            height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 30px;
+            animation: zdh 4s steps(7)  normal forwards 1;
+        }
+
+        @keyframes zdh{
+
+            100%{
+                width: 114px;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">1</div>
+    <div class="zhi">十年生死两茫茫</div>
+</body>
+
+</html>

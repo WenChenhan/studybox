@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>移动端布局</title>
+    <!-- 布局视口 layout viewport -->
+    <!-- 一般手机浏览器默认的布局视口是980px,大于或小于手机宽度时,会进行放大 缩小 或是滚动条 -->
+
+    <!-- 视觉视口 viasual viewport  -->
+    <!-- 用户看到的区域 放大网页:视觉视口变小;缩小网页:视觉视口变大;不会音箱布局视口 -->
+
+
+
+    <!-- 理想视口 ideal viewport:布局视口宽度=设备屏幕宽度 -->
+    <!-- 布局视口=屏幕宽度相等;网页缩放禁用 meta属性:maximum-scale=1.0 user-scalable=0 -->
+    <!-- initial-scale 初始缩放比例 大于0的数
+         maximum-scale 最大说谎比例  0.1-10
+         minimum-scale 最小 同上 
+        user-scalable 是否允许用户缩放 0 / 1-->
+
+
+    <!-- CSS长度单位:
+        1.相对长度单位:em renm vh vw等
+        2.绝对长度单位:px cm mm pc pt等
+    
+       px:像素单位 屏幕上每一个像素点,不会变动 他在屏幕上显示的大小时,根据用户屏幕的尺寸决定
+       em:描述当前元素的父元素的[字体大小]如果父元素没有字体大小,默认为16px 浏览器默认的字体大小 1em=16px
+       rem:相对于页面根元素html{ font-size:20px }的字体大小 1rem=20px
+       vh:相对于视口  1vh =视口高度 / 100
+       vw:相对视口  1vw = 视口宽度 / 100 -->
+
+
+    <!-- 响应式布局：
+            1、百分比：相对于父元素的百分比
+            2、媒体查询：
+            3、rem/em布局(通常与媒体查询共用)
+            4.vw/vh布局
+            5.flex布局  -->
+
+    <style>
+        /* 1.百分比布局 */
+        /* body{
+            width: 500px;
+            height: 500px;
+            margin: 0px auto;
+        }
+        .item {
+            width: 100%;
+            height: 100%;
+            background-color: cadetblue;
+        } */
+
+        /* 2.媒体查询:查询屏幕尺寸，根据不同屏幕尺寸适配不同的页面尺寸 */
+        /* 缺点：针对不同屏幕尺寸要写多套样式 */
+        /* 屏幕小于等于900px */
+        @media screen and (max-width:900px) {
+            html {
+                font-size: 20px;
+
+
+            }
+
+            .item {
+                width: 5rem;
+                height: 5rem;
+                background-color: aqua;
+            }
+
+        }
+
+        /* 屏幕在900px-1200px之间 */
+        @media screen and (min-width:901px) and (max-width:1200px) {
+            html {
+                font-size: 30px;
+            }
+
+            .item {
+                width: 5rem;
+                height: 5rem;
+                background-color: red;
+            }
+
+        }
+
+        /* 屏幕在1200px以上 */
+        @media screen and (min-width:1200px) {
+            html {
+                font-size: 40px;
+            }
+
+            body {
+                font-size: 20px;
+            }
+
+            .item {
+                width: 3rem;
+                height: 3em;
+                background-color: blue;
+            }
+
+        }
+
+        /* 3.ren/em布局 */
+
+
+        /* 4.vw/vh布局 */
+
+
+        /* 5.flex布局 */
+    </style>
+
+</head>
+
+<body>
+    <div class="item">啊对对对</div>
+
+
+</body>
+
+</html>

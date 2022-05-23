@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3新增选择器</title>
+    <style>
+        /* 1.属性选择器:input[属性名]  选中所有有属性的 或 特有属性的 input标签 */
+        input[type] {
+            width: 200px;
+        }
+
+        input[type="text"] {
+            height: 200px;
+        }
+
+        /* 2.结构伪类选择器 */
+        .big div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+            border: 1px solid red;
+        }
+
+        .bi div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            float: left;
+            border: 1px solid red;
+        }
+
+        /* .big:first-child {
+        第一个
+        } */
+        /* 第【3】个子元素 */
+        /* 前面只能写标签名 */
+        /* 注意空格 */
+
+        .big :nth-child(5) {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        /* 2n  --> 偶数
+           2n+1 --> 奇数
+           5n  --> 5的倍数
+           n+5 --> 第5个开始（包括第5个）
+          -n+5 --> 前五个 */
+
+
+          /* 3.指定类型选择器 选择第2个类型为input的元素  */
+         .big input:nth-of-type(3){
+              background-color: aliceblue;
+          }
+
+
+          /* 4.伪元素选择器 */
+          /* ::after 在元素后插入一个伪元素 */
+          /* ::before 在元素后插入一个伪元素 */
+
+          /* 必须要有content属性 */
+          /* 伪元素是一个行内元素 */
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <input type="checkbox">
+    <input type="submit">
+    <input type="radio">
+
+    <div class="big">
+        <div class="i1">1</div>
+        <div class="i1">2</div>
+        <div>3</div>
+        <div>4</div>
+        <input class="i1" type="text" value="5">
+        <div>6</div>
+        <input type="text" value="7">
+        <input type="text" value="8">
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <div class="bi">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+.body1 {
+  width: 1260px;
+  margin: 50px auto;
+  height: 296px;
+  margin-top: 100px;
+}
+
+
+.img1{
+    width: 1260px;
+    height: 200px;
+}
+
+
+.body1 a {
+  display: block;
+  width: 290px;
+  height: 200px;
+  float: left;
+  margin-left: 33px;
+  overflow: hidden;
+}
+
+.body1 span {
+  display: block;
+  width: 290px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 200px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  color: white;
+}
+
+.body1 a:hover > span {
+  margin-top: 150px;
+}
+
+.text1 li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  width: 138px;
+  height: 46px;
+  margin-right: 20px;
+  font-size: 14px;
+  line-height: 46px;
+  margin-top: 48px;
+  border: 1px solid #dfdfdf;
+  text-align: center;
+  color: #666666;
+}
+
+.text1 li:hover {
+  color: rgb(81, 205, 255);
+  cursor: pointer;
+}
+
+/* 第二个body */
+.body-bac{
+    overflow: hidden;
+    height: 608px;
+    background-color: rgb(246,246,246);
+    margin-top: 50px;
+    margin: 0px auto;
+    width: 100%;
+
+
+}
+
+
+
+.body2{
+    width: 1260px;
+    margin: 50px auto;
+    height: 420px;
+}
+
+.img2 a{
+    height: 200px;
+    width: 290px;
+    float: left;
+    margin-right: 33px;
+    overflow: hidden;
+}
+
+#i1{
+    height: 420px;
+}
+
+
+.body2 span {
+    display: block;
+    width: 290px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 200px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .body2 a:hover > span {
+    margin-top: 150px;
+  }
+
+ #i1 span {
+    display: block;
+    width: 290px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 420px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+  }
+  
+  .body2 #i1:hover > span {
+    margin-top: 370px;
+  }
+

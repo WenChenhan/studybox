@@ -1,0 +1,139 @@
+.gdy {
+  width: 1920px;
+  height: 482px;
+  background-image: url(../img/gdy.jpg);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin: 0px auto;
+}
+
+.bnt-left {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(128, 128, 128, 0.6);
+  margin-top: 212px;
+  margin-left: -80px;
+  border-radius: 3px;
+  overflow: hidden;
+  float: left;
+}
+
+.gdy:hover > .bnt-left {
+  margin-left: 80px;
+  transition: 0.5s;
+}
+
+.bnt-left i {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  margin-top: 3px;
+}
+
+.bnt-left:hover {
+  background-color: rgba(128, 128, 128, 0.8);
+  cursor: pointer;
+}
+/* 右边按钮 */
+.bnt-right {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(128, 128, 128, 0.6);
+  margin-top: 212px;
+  margin-right: -80px;
+  border-radius: 3px;
+  overflow: hidden;
+  float: right;
+}
+
+.gdy:hover > .bnt-right {
+  margin-right: 80px;
+  transition: 0.5s;
+}
+
+.bnt-right i {
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  margin-top: 3px;
+}
+
+.bnt-right:hover {
+  background-color: rgba(128, 128, 128, 0.8);
+  cursor: pointer;
+}
+/* 搜索框 */
+.shoushuokuang {
+  width: 687px;
+  height: 50px;
+  padding: 4px;
+  background-color: rgba(0,0,0,.15);
+  position: absolute;
+  margin: 216px 617px;
+  border-radius: 3px;
+
+}
+
+.shoushuokuang-wz{
+  width: 224px;
+  height: 21px;
+  position:absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 14px;
+  color:black;
+  z-index: 9;
+}
+
+
+
+
+
+.ssk {
+  width: 589px;
+  height: 48px;
+  outline: none;
+  border-radius: 3px 0px 0px 3px;
+  border: 0px;
+  background-color: rgba(255, 255, 255, 0.68);
+  overflow: hidden;
+  float: left;
+  font-size: 16px;
+  z-index: 10;
+  position: absolute;
+}
+
+.shoushuokuang-bnt {
+  width: 97px;
+  height: 48px;
+  float: right;
+  background-color: rgb(30, 188, 240);
+  border: 0px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.shoushuokuang-bnt:hover{
+  cursor: pointer;
+}
+
+.shoushuokuang-bnt i {
+  color: white;
+  font-size: 30px;
+}
+.ssk:focus {
+  background-color: white;
+}
+
+.ssk:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.ssk:focus::-moz-input-placeholder {
+  color: transparent;
+}
+.ssk:focus:-moz-input-placeholder {
+  color: transparent;
+}

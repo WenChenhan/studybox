@@ -1,0 +1,45 @@
+<!-- 
+    【边框现邻】的两个【块元素】会存在高度塌陷问题，垂直margin属性会重叠，不会相加；
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>边界塌陷问题</title>
+    <style>
+      .one {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        margin-left: 300px;
+        /* 解决方法： */
+
+        /* 1.添加透明边框 */
+        /* border: 1px solid transparent; */
+
+        /* 2.添加overflow属性 */
+        /* overflow: hidden; */
+
+        /* 3.添加padding,在原基础上减去多出的padding */
+        /* padding: 1px;
+            width: 198px;
+            height: 198px; */
+      }
+
+      .tow {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      <div class="tow"></div>
+    </div>
+  </body>
+</html>

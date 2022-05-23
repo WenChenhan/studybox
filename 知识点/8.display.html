@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display</title>
+    <style>
+      .one {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        display: inline-block;
+      }
+
+      img {
+        /* 设置行内元素及行内块的垂直对齐方式 */
+        vertical-align: middle;
+      }
+
+      a {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        vertical-align: middle;
+      }
+
+      span {
+        width: 200px;
+        background-color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">块元素</div>
+    <div class="one">块元素</div>
+    <br />
+    <a href="#">行内元素</a>
+    <a href="#" style="height: 100px">行内元素</a><br />
+    <img src="img/xiaomishoujiye.png" alt="1" />
+    <span>文字</span>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+li {
+  list-style-type: square;
+  color: gray;
+  height: 40px;
+}
+
+.xinwen {
+  width: 550px;
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+
+ul {
+  border-top: 2px gray dashed;
+  border-bottom: 2px gray dashed;
+}
+
+#firstli {
+  padding-top: 20px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.aa {
+  color: gray;
+  text-decoration: none;
+}
+
+.aa:hover {
+  text-decoration: underline;
+  color: rgba(0, 30, 163, 0.74);
+}

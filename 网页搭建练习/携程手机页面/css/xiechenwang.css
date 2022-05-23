@@ -1,0 +1,343 @@
+/* 搜索框样式 */
+.searchbox {
+  width: 100%;
+  padding: 12px 12px 6px;
+  display: flex;
+  background-color: #fff;
+  box-sizing: border-box; /*元素的总高度和宽度包含内边距和边框(padding 与 border) */
+}
+
+.search-index {
+  height: 30px;
+  border-radius: 16px;
+  border: 1px solid #0086f6;
+  flex: 1;
+}
+
+.searchbox i {
+  font-size: 16px;
+  line-height: 30px;
+  margin-left: 12px;
+}
+
+.searchbox span {
+  font-size: 15px;
+  line-height: 30px;
+  color: #999999;
+  margin-left: 6px;
+}
+
+/* 导航栏样式 */
+.daohanglanbox {
+  width: 100%;
+  padding: 6px 12px 2px;
+  display: flex;
+  box-sizing: border-box;
+  height: 184px;
+  background-color: #fff;
+}
+
+.daohanglan-li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1px;
+}
+
+.daohanglanbox > div:first-child {
+  margin-left: 0;
+}
+
+.daohanglan-li-item {
+  flex: 1;
+  margin-bottom: 1px;
+}
+
+.daohanglan-li-item > div:last-child {
+  margin-bottom: 0px;
+}
+
+.daohanglanbox a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.daohanglan-icon {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: 28px auto;
+}
+
+/* 导航栏-背景样式 */
+.daohanglan-li-1-j {
+  background-image: linear-gradient(180deg, #fa5956, #fb8650);
+}
+
+.daohanglan-li-2-j {
+  background-image: linear-gradient(180deg, #3c83fa, #50b2fa);
+}
+
+.daohanglan-li-3-j {
+  background-image: linear-gradient(0deg, #66a4ff, #5e80ff);
+}
+
+.daohanglan-li-4-j {
+  background-image: linear-gradient(180deg, #2fc3b6, #52d9b3);
+}
+
+.daohanglan-li-5-j {
+  background-image: linear-gradient(0deg, #ffa846, #ff8939 99%);
+}
+
+.daohanglan-li-1-n {
+  background-color: #fff5f1;
+}
+
+.daohanglan-li-2-n {
+  background-color: #eff9ff;
+}
+
+.daohanglan-li-3-n {
+  background-color: #f2f5ff;
+}
+
+.daohanglan-li-4-n {
+  background-color: #ecfcf8;
+}
+
+.daohanglan-li-5-n {
+  background-color: #fff9f2;
+}
+
+/* 导航滚轮样式 */
+.daohangsacle {
+  width: 100%;
+  height: 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  background-image: linear-gradient(0deg, #f4f4f4, #fff);
+}
+
+.daohangsacle-long {
+  width: 14px;
+  height: 4px;
+  background-color: #0086f6;
+  border-radius: 2px;
+  margin: 0px 2px;
+}
+
+.daohangsacle-short {
+  width: 4px;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 2px;
+  margin: 0px 2px;
+}
+
+/* 推荐栏样式 */
+.tuijianlan {
+  width: 100%;
+  padding: 0px 12px;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.tuijianlan-left {
+  background-color: #fff;
+  width: 49%;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tuijianlan-left-l1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tuijianlan-left-l1-t {
+  height: 16px;
+  color: #ff4607;
+  font-size: 10px;
+  background-color: #ffebe3;
+  border-radius: 2px;
+  line-height: 16px;
+  padding: 1px 4px;
+}
+
+.tuijianlan-left-l3 {
+  display: flex;
+}
+
+.tuijianlan-left-l3 del {
+  font-size: 12px;
+  line-height: 23px;
+}
+
+.tuijianlan-left-pr {
+  color: #f60;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 23px;
+  margin-right: 3px;
+}
+
+.tuijianlan-left-jian {
+  margin-left: 5px;
+  padding: 0px 3px;
+  line-height: 23px;
+  background-image: linear-gradient(90deg, #fa5956, #fb8650);
+}
+
+.tuijianlan-right-t {
+  background-color: #fdefd2;
+  color: #ae6e15;
+}
+
+.tuijianlan-right-l2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tuijianlan-right-l2 img {
+  width: 48%;
+  border-radius: 8px;
+}
+
+.tuijianlan-right-l3 {
+  display: flex;
+}
+
+.tuijianlan-right-l3 div {
+  width: 50%;
+  overflow: hidden; /* 超出部分隐藏 */
+  white-space: nowrap; /* 文本不换行 */
+  text-overflow: ellipsis; /* 超出部分用...代替 */
+}
+
+/* 隔断样式 */
+.geduanbox {
+  width: 100%;
+  padding: 5px 12px 2px;
+  box-sizing: border-box;
+  height: 88px;
+}
+
+.geduan {
+  width: 100%;
+  height: 88px;
+}
+
+/* 底部样式 */
+
+.footer-l1 {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-lianxi {
+  padding: 7px 14px;
+  border: 1px solid #999;
+  font-size: 13px !important;
+}
+
+.footer-l2 {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.shutiao {
+  width: 1px;
+  height: 16px;
+  background-color: #cccccc;
+}
+
+.footer-l2 a {
+  padding: 0 25px;
+}
+
+/* 菜单栏 */
+.caidan {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  width: 100%;
+  height: 49px;
+  background-color: white;
+  border-bottom: 1px solid white;
+  max-width: 520px;
+}
+
+.caidan-item {
+  display: block;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.caidan-item-icon {
+    display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(../img/精灵图.png);
+  background-repeat: no-repeat;
+  background-size: 32px auto;
+}
+
+.caidan-item-icon1 {
+  background-position: 0 0;
+}
+
+.caidan-item-icon2 {
+  background-position: 0 -32px;
+}
+
+.caidan-item-icon3 {
+  background-position: 0 -64px;
+}
+
+.caidan-item-icon4 {
+  background-position: 0 -96px;
+}
+
+.caidan-item a {
+  padding-bottom: 3px;
+}
+
+.dibu{
+    margin-bottom: 100px;
+}
+
+
+/* 侧边栏样式 */
+.qiandao {
+  position: fixed;
+  bottom: 55px;
+  right: 0px;
+  width: 76px;
+  height: 76px;
+  background-image: url(../img/signin-d.png);
+  background-size: 76px auto;
+}
+.qiandao a {
+  display: block;
+  width: 76px;
+  height: 76px;
+}

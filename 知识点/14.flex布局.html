@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex布局</title>
+    <!-- CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。
+引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。
+flex布局主要解决：网页布局 居中  自动弹性伸缩 元素布局，适配不同大小的屏幕，以及移动端 -->
+
+    <!-- 弹性容器：container -->
+    <!-- 弹性子元素:item -->
+    <!-- 从起始线到结束线 -->
+    <style>
+        .bigbox {
+            width: 600px;
+            height: 400px;
+            background-color: aqua;
+            display: flex;
+            /* -------属性1:flex-direction-主轴方向------- */
+            /* 1.从左至右:默认情况 */
+            /* flex-direction: row; */
+            /* 2.从右至左:主轴翻转 */
+            /* flex-direction: row-reverse; */
+            /* 3.从上到下:主侧轴互换 */
+            /* flex-direction: column; */
+            /* 4.从下到上:主侧轴互换翻转 */
+            /* flex-direction: column-reverse; */
+
+            /* -------属性2:flex-wrap-是否换行------- */
+            /* 子元素超出容器,会自适应减少每个元素的宽(沿着主轴) */
+            /* 1.默认:不换行,压缩子元素宽 */
+            /* flex-wrap: nowrap; */
+            /* 2.主轴溢出,元素换行 */
+            /* flex-wrap: wrap; */
+            /* 3.主轴溢出,元素换行翻转 */
+            /* flex-wrap: wrap-reverse; */
+
+            /* 4.元素简写:改变主轴方向,是否换行 */
+            /* flex-flow: column nowrap; */
+
+            /* -------属性3:justify-content-子元素在主轴上的排列方式------- */
+            /* 1.默认:沿主轴开始线到结束线 */
+            /* justify-content: flex-start; */
+            /* 2.沿主轴结束线 到开始线 */
+            /* justify-content: flex-end; */
+            /* 3.主轴方向居中 */
+            /* justify-content: center; */
+            /* 4.两端靠齐,中间自适应拉开 */
+            /* justify-content: space-between; */
+            /* 5.剩余空间平分到每个子元素的两侧 */
+            /* justify-content: space-around; */
+            /* 6.弹性居中,空隙平均分 */
+            /* justify-content: space-evenly; */
+
+            /* -------属性4.1:align-items-子元素在侧轴上的排列方式(不换行)------- */
+            /* 1.默认:沿起始线 */
+            /* align-items: flex-start; */
+            /* 2.沿结束线 */
+            /* align-items: flex-end; */
+            /* 3.居中 */
+            /* align-items: center; */
+            /* 4.侧轴上拉伸,适应父元素的高度(子元素没有设置高度时) */
+            /* align-items: stretch; */
+
+            /* -------属性4.2:align-items-子元素在侧轴上的排列方式(换行)------- */
+            /* 1.默认:沿起始线 */
+            /* align-items: flex-start; */
+            /* 2.沿结束线 */
+            /* align-items: flex-end; */
+            /* 3.居中 */
+            /* align-items: center; */
+            /* 4.上下两端对齐,剩余平均分 */
+            align-content: space-between;
+            /* 5.分散对齐 剩余空间平分到每个子元素的两侧*/
+            /* align-content: space-around;   */
+            /* 6.顶端对齐,子元素行与行无空隙 */
+            /* align-content: flex-start;   */
+            /* 7.居中对齐,子元素行与行无空隙 */
+            /* align-content: center;   */
+            /* 8.底部对齐,子元素行与行无空隙 */
+            /* align-content: flex-end;   */
+        }
+
+        .son {
+
+
+
+            width: 300px;
+            height: 100px;
+            font-size: 50px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        .one {
+            background-color: blue;
+            flex-shrink: 2;
+        }
+
+        .tow {
+            background-color: red;
+            flex-shrink: 1;
+        }
+
+        .tre {
+            background-color: orange;
+            /* -------属性1:生长因子 容器主轴存在剩余空间时,放大指定子元素 / 默认值:0,值为份数,单份为空隙之和除以总份数------- */
+            /* flex-grow: 1; */
+            /* -------属性2:收缩因子 容器主轴宽度不够并且禁止换行时,缩小子元素 / 默认值:1 禁止收缩:0------- */
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="one son">1</div>
+        <div class="tow son">2</div>
+        <div class="tre son">3</div>
+
+</body>
+
+</html>

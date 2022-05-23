@@ -1,0 +1,121 @@
+/* 全局动态样式 */
+.hover-white:hover{
+    color: white;
+}
+
+.hover-orgen:hover {
+    color: rgb(254, 105, 0);
+  }
+
+  
+.taiqi-shadow:hover {
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+    /* box-shadow:0 15px 30px rgba(0,0,0,.1); */
+    transition: 0.4s;
+  }
+
+  .tq-shadow:hover {
+    cursor: pointer;
+    /* box-shadow: 0 15px 30px rgba(0,0,0,.1); */
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+    transform:translate3d(0,-2px,0);
+    /* margin-top: -3px; */
+  }
+
+  .tq-shadow{
+    transition: all 0.4s;
+  }
+
+  .shou{
+      cursor: pointer;
+  }
+
+/* 头部动态样式 */
+.header-right-gwc:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+  
+.header-right-gwc:hover > a {
+    color: rgb(254, 105, 0);
+
+  }
+  
+  .header-right-gwc:hover > .header-right-gwc-icon {
+    background-position: 0px -23px;
+  }
+
+.nav-right-ssk:focus{
+      border: 1px solid rgb(254, 105, 0);
+  }
+
+.nav-right-ssk:focus ~ .nav-right-btn{
+    border: 1px solid rgb(254, 105, 0);
+    border-left: 0px;
+}
+
+.nav-right-btn:hover{
+    background-color:rgb(254, 105, 0) ;
+
+}
+
+.nav-right-btn:hover > i{
+color: white;
+
+}
+
+
+/* 滚动页样式 */
+.bac-orgen:hover{
+    background-color: rgb(254, 105, 0);
+}
+
+/* 推广也样式 */
+
+.tuiguanglan-part1-content:hover > img{
+opacity: 1;
+
+}
+
+.tuiguanglan-part1-content:hover > p{
+color: rgb(255, 255, 255);
+    
+    }
+
+
+/* 正文样式1 */
+
+.body-shouji-nav-right:hover{
+    color:rgb(254, 105, 0) ;
+    transition: 0.3s;
+}
+
+.body-shouji-nav-right:hover > i{
+    color:rgb(254, 105, 0) ;
+    transition: 0.3s;
+}
+
+.body-shouji-nav-right-link:hover{
+    border-bottom: 3px solid rgb(254, 105, 0);
+    color: rgb(254, 105, 0);
+    transition: 0,5s;
+}
+
+
+
+.footer-fuwu-li:hover > i{
+  color: rgb(254, 105, 0);
+
+}
+
+.footer-link-right-btn:hover{
+  background-color: rgb(254, 105, 0);
+  color: white;
+  transition: 0.5s;
+}
+
+.footer-link-right-btn:hover > i{
+  color: white;
+  transition: 0.5s;
+}

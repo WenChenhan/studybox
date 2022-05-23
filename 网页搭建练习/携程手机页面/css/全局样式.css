@@ -1,0 +1,61 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  max-width: 520px;background-color: #f4f4f4;
+  margin: 0px auto;
+}
+
+
+/* 字体 */
+.hei12 {
+  font-size: 12px;
+  color: #333333;
+  text-align: center;
+}
+
+.bai12 {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.bai12 {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.hui12 {
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+}
+
+/* 圆角 */
+.yj {
+  border-radius: 8px;
+}
+
+.yj-l-t {
+  border-top-left-radius: 8px;
+}
+
+.yj-l-b {
+  border-bottom-left-radius: 8px;
+}
+
+.yj-r-t {
+  border-top-right-radius: 8px;
+}
+
+.yj-r-b {
+  border-bottom-right-radius:8px ;
+}
+

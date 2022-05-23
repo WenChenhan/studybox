@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定位-层级-隐藏</title>
+
+    /* 层级：
+    ------------------------------------------------
+    最上层：天空 —— 定位
+    ------------------------------------------------
+    中间层：海面 —— 浮动
+    ------------------------------------------------
+    最下层：海底 —— 标准流
+    ------------------------------------------------
+    注：加了定位的盒子，默认最后定位的盒子在最上面
+
+    *z-index只能作用在定位层 —— 数值为负时在标准流之下
+    */
+
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .big {
+        width: 500px;
+        height: 500px;
+        background-color: rgba(128, 128, 128, 0.7);
+        /* 一、【相对定位】不会脱流，只是相对于元素在【标准流中的位置】进行偏移 */
+        position: relative;
+        top: 50px;
+        left: 50px;
+      }
+      .small {
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        /* 二、【绝对定位】会以最近的拥有定位属性（除静态定位）的父元素为准进行偏移 */
+        /* 一般是子绝父相 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* 2DXY偏移 */
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        /* 隐藏，但保留元素位置，相当于透明 */
+        /* 与display:noone;区别：display通过销毁元素节点来实现消失（不占位置） */
+        visibility: hidden;
+      }
+      .dog {
+        height: 200px;
+        background-color: aqua;
+      }
+      .fixed {
+        width: 50px;
+        height: 100px;
+        /* 三、【固定定位】以浏览器的边界为准进行偏移,不随窗口移动 */
+        position: fixed;
+        background-color: burlywood;
+        left: 800px;
+        top: 100px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="dog"></div>
+    <div class="big">
+      父
+      <div class="small">子</div>
+    </div>
+    <div class="dog"></div>
+    <div class="fixed">fixed</div>
+    <div class="dog"></div>
+    <div class="dog"></div>
+  </body>
+</html>

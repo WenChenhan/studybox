@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <!-- 过渡：是从一个状态 渐渐 过渡到另一个状态 -->
+    <style>
+        .big{
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            margin: 100px auto;
+            /* 要做过渡的属性 */
+            transition-property: background-color,border-radius;
+            /* 速度曲线 ease-加速  linear-匀速 ease=out-逐渐减速 ease-in逐渐加速 ease-in-out先加速再减速*/
+            transition-timing-function: linear;
+            /* 延迟时间 */
+            transition-delay: 1s;
+            /* 过渡时间 */
+            transition-duration: 2s;
+            /* 简写：属性 速度曲线 过渡时间 延迟时间 */
+            transition: background-color linear  2s 0.5s,border-radius linear 5s 0s;
+        }
+
+        .big:hover{
+        background-color: brown;
+        border-radius: 50%;
+    }
+    </style>
+
+
+</head>
+<body>
+    <div class="big"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+  margin: 0px;
+  text-decoration: none;
+  padding: 0px;
+}
+
+.nav {
+  width: 1260px;
+  height: 75px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.logo {
+  width: 149px;
+  height: 45px;
+  margin-top: 15px;
+  margin-right: 70px;
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: -208px 0px;
+  float: left;
+}
+
+.logo1 {
+  display: block;
+  width: 149px;
+  height: 45px;
+  margin-top: 15px;
+  margin-right: 70px;
+}
+
+.nav-a li {
+  float: left;
+  display: block;
+  list-style: none;
+  font-size: 16px;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+.nav-a li:hover {
+  color: rgb(80, 212, 255);
+  cursor: pointer;
+}
+
+.nav-login {
+  width: 100px;
+  height: 38px;
+  border: 0px;
+  margin-top: 24px;
+  margin-right: 11px;
+  float: right;
+  color: white;
+  background-color: rgb(30, 188, 240);
+  border-radius: 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>溢出隐藏</title>
+    <style>
+      .one {
+        width: 200px;
+        height: 200px;
+        margin: 100px;
+        border: 1px solid red;
+        overflow: hidden; /* 超出部分隐藏 */
+        white-space: nowrap; /* 文本不换行 */
+        text-overflow: ellipsis; /* 超出部分用...代替 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="one">
+      十年生死两茫茫，不思量，自难忘。千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。夜来幽梦忽还乡，小轩窗，正梳妆。相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。
+    </div>
+  </body>
+</html>

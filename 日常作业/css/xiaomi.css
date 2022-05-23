@@ -1,0 +1,46 @@
+.xiaomiload {
+  width: 350px;
+  background-color: rgb(255, 255, 255);
+  /* margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto; */
+  margin: 5% auto 0px;
+}
+
+#xmlogo {
+  width: 100px;
+  margin-left: 125px;
+}
+
+.srk {
+  width: 350px;
+  height: 40px;
+  border: 1px rgba(194, 194, 194, 0.945) solid;
+  margin-left: 0px;
+  margin-top: 15px;
+  outline: none;
+  font-size: 14px;
+}
+
+#dl {
+  background-color: rgb(254, 105, 0);
+  margin: 0px;
+  width: 354px;
+  height: 42px;
+  margin-left: 0px;
+  margin-top: 35px;
+  border: 0px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-family: "微软雅黑Light";
+  font-weight: 400;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+input[class="srk"]:focus {
+  border: 1px rgb(254, 105, 0) solid;
+}

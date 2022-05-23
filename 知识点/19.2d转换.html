@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2d转换</title>
+    <!-- 在网页中 实现元素的位移旋转 缩放等效果 -->
+    <!-- 平移转换不会影响到其他元素 -->
+    <!-- 平移对行内元素来说没有效果 -->
+    <style>
+        .big {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 50px auto;
+            transition: all 1s;
+            /* 旋转中心点，默认为中点，属性值可以为方位词 百分比 像素值 */
+            /* transform-origin: left bottom; */
+        }
+
+        .big:hover {
+            background-color: brown;
+            border-radius: 50%;
+            /* translate平移 rotate旋转  scale缩放*/
+
+            /* 角度为正顺时针 角度为负逆时针 */
+            /* 默认情况下旋转中心点在元素的中点 */
+            /* scale(宽，高) */
+
+            transform: translate(0px, 0px) rotate(180deg) scale(.5,.3);
+        }
+
+        .b {
+            width: 500px;
+            height: 500px;
+            margin: 0px auto;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .s {
+            width: 50%;
+            height: 50%;
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big"></div>
+    <div class="b">
+        <div class="s"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>浮动</title>
+    <!-- 常用布局方式：
+    1、float 浮动布局
+    2、定位
+    3、fixed 弹性布局 
+    -->
+    <style>
+      .fa {
+        width: 500px;
+        border: 5px solid blue;
+        float: left;
+        /* overflow: hidden; */
+      }
+
+      .son1 {
+        width: 300px;
+        height: 200px;
+        background-color: brown;
+        float: left;
+      }
+
+      .son2 {
+        width: 200px;
+        height: 300px;
+        background-color: rgb(0, 155, 129);
+        float: left;
+      }
+
+      .un {
+        width: 800px;
+        height: 200px;
+        background-color: rgb(238, 161, 161);
+        /* float: left; */
+        float: right;
+        clear: both;
+      }
+
+      /* .clearboth{
+          clear: both;
+      } */
+
+      /* 解决浮动后父元素高度塌陷问题 */
+      .clearfix:after {
+        /* 添加一个空内容 */
+        content: "";
+        /*  转换为一个块元素 */
+        display: block;
+        /* 清除浮动 */
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fa clearfix">
+      <div class="son1">son1</div>
+      <div class="son2">son2</div>
+      <div class="clearboth"></div>
+    </div>
+    <div class="un">un</div>
+  </body>
+</html>
