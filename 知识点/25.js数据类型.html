@@ -44,14 +44,16 @@
         console.log(b4);//两个字符串通过 + 来拼接
         var c1 = "字符串3";
         var c2 = 10;
-        console.log(c1+c2);//字符串和任何类型的数据拼接之后都会变成字符串
+        console.log(c1 + c2);//字符串和任何类型的数据拼接之后都会变成字符串
         var c3 = "10";
         var c4 = 10;
         console.log(c3 + c4);
 
         var name = "张三";
         var age = 8;
-        console.log("我的名字叫"+name+",今年"+age+"岁。");
+        console.log("我的名字叫" + name + ",今年" + age + "岁。");
+
+
 
         // Boolean:true / false 等价于 1 / 0
         var flag = true;
@@ -59,9 +61,87 @@
 
 
 
+        // Undefined：未定义：变量声明但未赋值，这个变量会有一个Undefined的默认值
+        var c9;
+        console.log(c9);
+        console.log(c9 + "100");//Undefined和字符串相加 结果字符串
+        console.log(c9 + 100);//和数字相加，加过NaN
 
-        // Undefined：未定义的
+
         // Null：空值
+        var d = null;//变量声明为null，里面存的值为空
+        console.log(d + "100");//Null和字符串相加 结果字符串
+        console.log(d + 100);//Null和数字相加 结果数字
+
+
+        // 2.复杂数据类型（引用数据类型）：Object
+
+        // 判断数据类型:typeof检测数据类型
+        var a = 1
+        console.log(typeof a);
+
+        var b = "123a"
+        console.log(typeof b);
+
+        var c = true
+        console.log(typeof c);
+
+
+        var f = 8, g = '啊对对对', h = true, i = undefined, j = null;
+        console.log(f, g, h, i, j);
+
+
+
+        // 数据类型转换：使用表单，prompt，获取的数据都是字符串，不能进行简单的相加相减，需要再算数运算前对数据类型进行转换
+        // 把一种数据类型转换为另一种数据类型
+        console.log("----------转化为字符串--------");
+        // 1.转换成字符串
+        var a4 = 15;
+        console.log(a4.toString());//通过toString
+        console.log(String(a4));//通过String
+        console.log(a4 + "");//拼接空字符串  隐式转换
+
+        console.log("---------转化为数字----------");
+        // 2.转换为数字类型
+        var a5 = "123.6"
+        console.log(parseInt(a5));//parseInt：转换为数字类型(整数型），浮点数向下取整
+        console.log(parseFloat(a5));//parseFloat:转换为浮点型数字，保留小数点
+        console.log(Number(a5));//Number:对于有非数字的变量，会返回NaN
+        var a6 = "23.6"
+        console.log(a5 - a6);//隐式转换
+        console.log(a5 - "");//隐式转换
+
+        console.log("---------转化为布尔类型----------");
+        // 3.转换为布尔类型
+        var a10 = 10
+        console.log(Boolean(a10));//Boolean:代表空  否定的值都会转化为false
+        console.log(Boolean("啊对对对"));
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+
+
+        
+        console.log("--------小练习---------");
+        // 交换a b的值
+        var a = 20,
+            b = 25;
+        // 方式一
+        var c = a,
+            a = b,
+            b = c;
+        console.log(a, b);
+        // 方式二
+        var c = a + b,
+            a = c - a,
+            b = c - a;
+        console.log(a, b);
+
+
+
+
+
 
 
 

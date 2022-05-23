@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS基础练习</title>
+</head>
+<body>
+    <!-- 
+练习1：声明多个变量分别保存一个人的姓名，性别，电话，家庭地址。并打印出来
+
+练习2：声明变量分别保存语文、数学、总成绩，其中总成绩为空；把语文和数学相加的和赋给总成绩。最后打印3个变量。
+
+练习3：声明变量保存圆周率，声明变量保存圆的半径，计算周长和面积，声明变量分别保存圆的面积和周长。
+
+练习4：假设从数据库获取到了商品的名称和价格，拼接打印出’商品名称：xxx 价格：xxx’
+
+练习5：让用户输入年龄 ， 并通过弹窗 展示用户5年后的年龄
+
+练习6: 分别定义一个整型，字符串类型和 boolean类型的变量，对它们进行赋值，然后再输出。
+
+练习7：让用户从键盘上输入两个数，求出它们的和差积商。
+
+练习8：定义两个变量,从键盘上输入它们的值，然后输出它们的值，再交换两个变量的值，再输出。
+
+       比如：
+
+           m=5,n=6;
+
+
+      最终要变成：
+
+           m=6,n=5 -->
+    <script>
+        console.log("------练习1-------");
+        var name = "文晨翰",
+            sex = "男",
+            phone = "117713531887",
+            adrss = "成都市锦江区";
+        console.log("姓名:" + name);
+        console.log("性别:" + sex);
+        console.log("电话:" + phone);
+        console.log("地址:" + adrss);
+
+
+        console.log("------练习2-------");
+        var yuwenScore = 80,
+            shuxueScore = 99,
+            score = null;
+        var score = yuwenScore + shuxueScore;
+        console.log("语文：" + yuwenScore + "分");
+        console.log("数学：" + shuxueScore + "分");
+        console.log("总成绩：" + score + "分");
+
+
+
+        console.log("------练习3-------");
+        var pai = 3.1415926,
+            r = 3;
+        var zhouchang = 2 * pai * r;
+        var mianji = pai * r * r;
+        console.log("周长：" + parseInt(zhouchang));
+        console.log("面积：" + mianji);
+
+
+
+        console.log("------练习4-------");
+        var name = "菊乐酸奶",
+            price = 30;
+        console.log("商品名称：" + name + " 价格：" + price + "元");
+
+
+
+        console.log("------练习5-------");
+        var age = prompt("请输入你的年龄：");
+        var ageAfter = parseInt(age) + 5;
+        console.log("你5年后将是" + ageAfter + "岁。");
+        alert("你5年后将是" + ageAfter + "岁。");
+
+
+
+
+        console.log("------练习6-------");
+        var int = 100;
+        var zhifuchuan = "啊对对对对";
+        var bool = true;
+        console.log(int, zhifuchuan, bool);
+
+
+
+        console.log("------练习7-------");
+        var num1 = prompt("请输入第一个数：");
+        var num2 = prompt("请输入第二个数：");
+        var he = Number(num1) + Number(num2),
+            cha = Number(num1) - Number(num2),
+            ji = Number(num1) * Number(num2),
+            shang = Number(num1) / Number(num2);
+        console.log("和：" + he + "；差：" + cha + "；积：" + ji + "；商：" + shang);
+        alert("和：" + he + "；差：" + cha + "；积：" + ji + "；商：" + shang);
+
+
+
+        console.log("------练习8-------");
+        var m = Number(prompt("请输入一个值（m）：")),
+            n = Number(prompt("请输入一个值（n）："));
+        console.log(typeof m);
+        alert("你输入的两个数字分别为：m=" + m + "，n=" + n + "；")
+        var c = m,
+            m = n,
+            n = c;
+        alert("交换值后：m=" + m + "，n=" + n + "；")
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
