@@ -23,10 +23,108 @@
 
 
 
-        var age = prompt("请输入年龄");
-        console.log(age);
-        var bronYear = 2022 - age;
-        alert("你的出生年份为：" + bronYear + "年");
+
+        console.log("--------递增递减运算符---------");
+        // 2.递增递减运算符：++  --
+        var a = 1;
+        ++a;//前置递增，先自加 后返回值
+        console.log(++a + 10);
+
+        var b = 2;
+        b++;
+        console.log(b++ + 10);//后置递增，先返回值 再递增
+        console.log(b);
+
+        var c = 5;
+        --c;//前置递减，先自减 后返回值
+        console.log(c);
+
+        var d = 10;
+        console.log(10 + d++ + ++d);
+        d--;//前置递减，先自减 后返回值
+        console.log(d--);
+        console.log(d--);
+
+
+
+
+        console.log("--------比较（关系）运算符---------");
+        // 3.比较（关系）运算符： <  >  <=  >=  ==  !=  ===  !==
+        console.log(a < b);//true
+        console.log(a > b);
+        console.log(10 <= 11);//true
+        console.log(10 >= 11);
+        console.log(11 == 11);//true
+        console.log(11 == "11");//==符号会自动进行隐式转换
+        console.log(11 === "11");//===符号会判断类型
+        console.log(10 != 11);//true
+        console.log(10 != "10");//!=符号会自动进行隐式转换
+        console.log(10 !== "11");//!==符号会判断类型
+
+
+
+        console.log("--------逻辑运算符---------");
+        // 4.逻辑运算符：&& 与    ||  或       ！ 非
+        var res = 2 > 1 && 0 > 1;//两边都为真 则返回真
+        console.log(res);
+
+        var res = 2 > 1 || 0 > 1;//两边有一个为真 则返回真
+        console.log(res);
+
+        var res = 2 > 1 && !(0 > 1);
+        console.log(res);
+        var res = 2 > 1 && 0 > 1;
+        console.log(!res);
+
+
+
+        console.log("--------短路运算---------");
+        // 5.当我们有多个表达式时，如果左边的表达式的值可以确定，就不再继续右边的表达式
+        /* 逻辑与：
+        表达式1 && 表达式2
+        如果1为真，返回2的值；如果1为假，返回1的值；
+        */
+        console.log(123 && 456);
+        console.log(0 && 456);
+        console.log(123 && 456 && 789);
+        /* 逻辑或：
+        表达式1 || 表达式2
+        如果1为真，返回1的值；如果1为假，返回2的值；
+        */
+        console.log(123 || 456);
+        console.log(0 || 456);
+        console.log(123 || 456 || 789);
+
+
+
+        console.log("--------赋值运算符---------");
+        // = 直接赋值；+=  -=:加或减一个数后，再赋值
+        var a = 5;
+        a += 5;//a = a + 5;
+        console.log(a);
+        a -= 5;//a = a - 5;
+        console.log(a);
+        // *=   /+  %=：乘除取余后再赋值
+        var b = 10;
+        b *= 2;
+        console.log(b);
+        b /= 2;
+        console.log(b);
+        b %= 3;
+        console.log(b);
+
+
+        console.log("--------三元表达式---------");
+        //语法：表达式1?表达式2:表达式3  ————  1为真  返回2  ；1为假  返回3
+        var num = prompt('请输入一个0-10之间的数');
+        var res = num > 10 ? num : "0" + num;
+        console.log(res);
+        alert(res);
+
+
+        var age = prompt('输入你的年龄');
+        age >= 18 ? alert('可以上网！') : alert('回家敲代码');
+
 
 
 

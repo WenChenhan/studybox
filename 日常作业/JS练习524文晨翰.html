@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS练习524</title>
+</head>
+
+<body>
+    <script>
+        console.log('-------练习1----------');
+        // 1.定义三个 变量 求 三个变量中的最大值 
+        //   要求：使用三元表达式
+        var a = 24,
+            b = 23,
+            c = 12;
+        // a > b && a > c ? max = a : (b > a && b > c ? max = b : max = c)
+        var max = a > b ? (a > c ? a : c) : (b > c ? b : c)
+        console.log('最大值：' + max);
+
+
+        console.log('-------练习2----------');
+        // 2.定义三个 变量 求 三个变量中的最大值 
+        //   要求：使用else if
+        var a = 30,
+            b = 24,
+            c = 32;
+        var max = null
+        if (a > b) {
+            if (a > c) {
+                max = a
+            } else {
+                max = c
+            }
+        } else if (b > c) {
+            max = b
+        } else {
+            max = c
+        }
+        console.log('最大值：' + max);
+
+
+        console.log('-------练习3----------');
+        // 3.要用户输入三个数字，再分别用三元表达式与 else if 求最大值
+        var a = Number(prompt('三元表达式：输入数字a')),
+            b = Number(prompt('三元表达式：输入数字b')),
+            c = Number(prompt('三元表达式：输入数字c'));
+        // a > b && a > c ? max = a : (b > a && b > c ? max = b : max = c)
+        var max = a > b ? (a > c ? a : c) : (b > c ? b : c)
+        console.log('三元表达式输出的最大值：' + max);
+        alert('三元表达式输出的最大值：' + max)
+
+        var a = Number(prompt('else if：输入数字a')),
+            b = Number(prompt('else if：输入数字b')),
+            c = Number(prompt('else if：输入数字c'));
+        var max = null
+        if (a > b) {
+            if (a > c) {
+                max = a
+            } else {
+                max = c
+            }
+        } else if (b > c) {
+            max = b
+        } else {
+            max = c
+        }
+        console.log('else if输出的最大值：' + max);
+        alert('else if输出的最大值：' + max)
+
+
+        console.log('-------练习4----------');
+        // 4.用户输入1-7之间的数字，判断是星期几(1-7分别对应星期一至星期天)
+        var day = prompt('请输入一个1-7之间的数字'),
+            weekDay = null;
+        switch (day) {
+            case "1":
+                weekDay = "星期一";
+                break;
+            case "2":
+                weekDay = "星期二";
+                break;
+            case "3":
+                weekDay = "星期三";
+                break;
+            case "4":
+                weekDay = "星期四";
+                break;
+            case "5":
+                weekDay = "星期五";
+                break;
+            case "6":
+                weekDay = "星期六";
+                break;
+            case "7":
+                weekDay = "星期天";
+                break;
+            default:
+                weekDay = null;
+        }
+        if (weekDay === null) {
+            console.log('用户非法输入：' + day);
+            alert('非法输入')
+
+        } else {
+            console.log('该数字代表的是：' + weekDay);
+            alert('该数字代表的是：' + weekDay)
+        }
+
+
+
+        console.log('-------练习5----------');
+        // 5.用户输入数字，如果是四位数则分别算出个十百千位上的数字，不是则让用户重新输入 再分别算出个十百千位上的数字
+        var num = Number(prompt('请输入一个4位数的数字：'));
+        if (num.toString().length !== 4) {
+            while (num.toString().length !== 4) {
+                num = Number(prompt('非法输入！请输入一个4位数的数字：'));
+            }
+        }
+        var n1 = parseInt(num / 1000),
+            n2 = parseInt(num % 1000 / 100),
+            n3 = parseInt(num % 100 / 10),
+            n4 = parseInt(num % 10);
+        console.log("个位数：" + n4 + "；十位数：" + n3 + "；百位数：" + n2 + "；千位数：" + n1);
+        alert("个位数：" + n4 + "；十位数：" + n3 + "；百位数：" + n2 + "；千位数：" + n1);
+
+
+
+        console.log('-------练习6----------');
+        // 6.用户输入 如果不是三位数 则进行补零，如果是三位数提示恭喜你中奖了，如果是四位数 求出前两位的和
+        var num = Number(prompt('请输入一个数字'));
+        console.log('用户输入的数是:' + num);
+        if (num.toString().length < 3) {
+            switch (num.toString().length) {
+                case 1:
+                    alert('补齐3位：' + '0' + '0' + num)
+                    break;
+                case 2:
+                    alert('补齐3位：' + '0' + num)
+                    break;
+            }
+        } else if (num.toString().length === 3) {
+            alert('恭喜你中奖了！')
+        } else if (num.toString().length === 4) {
+            var n1 = parseInt(num / 1000),
+                n2 = parseInt(num % 1000 / 100);
+            console.log('前两位数的和为：' + (n1 + n2));
+            alert('前两位数的和为：' + (n1 + n2));
+        } else {
+            console.log('用户非法输入：' + num);
+            alert('非法输入')
+        }
+
+        console.log('-------练习7----------');
+        // 7.用户输入水果名字以及需要购买的斤数，弹窗出"你买了xx斤xx一共多少钱"
+        var frt = prompt('今日水果特价：【苹果 20元/斤】【香蕉 4元/斤】【榴莲 15元/斤】【橘子 18元/斤】', '输入你要买的水果：'),
+            pri = null;
+        switch (frt) {
+            case "苹果":
+                pri = 20;
+                break;
+            case "香蕉":
+                pri = 4;
+                break;
+            case "榴莲":
+                pri = 15;
+                break;
+            case "橘子":
+                pri = 18;
+                break;
+            default:
+                pri = null;
+        }
+        if (pri === null) {
+            console.log('库存中无用户输入的水果');
+            alert('你要买的水果没有了！')
+
+        } else {
+            kg = Number(prompt('你要购买多少斤？'));
+            var priceAll = kg * pri
+            console.log('用户购买了' + kg + '斤' + frt + ',一共' + priceAll + '元!');
+            alert('你成功购买了' + kg + '斤' + frt + ',一共' + priceAll + '元!');
+        }
+
+        console.log('-------练习8----------');
+        // 8.假设这个月1号是星期三，提示用户输入本月的日期（即1日-31日），返回用户输入的那一天是星期几
+        var day = Number(prompt('输入日期：'));
+        var weekDay = day % 7 + 2;
+        var week = null;
+        switch (weekDay) {
+            case 1:
+                week = "星期一";
+                break;
+            case 2:
+                week = "星期二";
+                break;
+            case 3:
+                week = "星期三";
+                break;
+            case 4:
+                week = "星期四";
+                break;
+            case 5:
+                week = "星期五";
+                break;
+            case 6:
+                week = "星期六";
+                break;
+            case 7:
+                week = "星期天";
+                break;
+        }
+        console.log("本月" + day + '号 是' + week + '！');
+        alert("本月" + day + '号 是' + week + '！')
+
+
+
+        console.log('-------练习9----------');
+        // 9.输入月份，显示当月的天数（考虑平年闰年2月情况）
+        var mouth = Number(prompt('输入月份：'));
+        if (mouth === 2) {
+            var year = prompt('请输入年份:');
+            if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+                console.log(year + '年为闰年，2月共28天！');
+                alert(year + '年为闰年，2月共28天！');
+            } else {
+                console.log(year + '年为闰年，2月共27天！');
+                alert(year + '年为平年，2月共27天！');
+            }
+        } else if ((mouth < 8 && mouth % 2 === 1) || (mouth > 7 && mouth % 2 === 0)) {
+            console.log(mouth + '月共31天！');
+            alert(mouth + '月共31天！');
+        } else {
+            console.log(mouth + '月共31天！');
+            alert(mouth + '月共30天！');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

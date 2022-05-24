@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分支结构</title>
+</head>
+
+<body>
+    <script>
+        // 分支结构：
+        // 1.if 
+        var age = prompt('请输入年龄')
+
+        if (age >= 18) {
+            alert('可以上网！')//表达式成立时执行
+        } else {
+            alert('回家敲代码')//表达式不成立时执行
+        }
+
+        // 能被4整除且不能被100整除的是闰年，能被400整除的也是闰年
+        var year = prompt('请输入年份')
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+            alert('闰年！')
+        } else {
+            alert('平年！')
+        }
+
+        // else if
+
+        var grd = Number(prompt('输入成绩'));
+        if (grd >= 90) {
+            alert('等级a')
+        } else if (grd >= 80) {
+            alert('等级b')
+        } else if (grd >= 70) {
+            alert('等级c')
+        } else if (grd >= 60) {
+            alert('d等级')
+        } else {
+            alert('e等级')
+
+        }
+
+
+        // 2.switch 
+        /* 
+        switch(表达式){
+            case value1:表达式等于value1时，执行；
+            break；
+            case value2:表达式等于value2时，执行；
+            break；
+
+            default；表达式不等于任何一个case值，执行
+        }
+        */
+
+        switch (prompt('输入你需要的水果：')) {
+            case "香蕉":
+                alert('香蕉价格：80元')
+                break;
+            case "苹果":
+                alert('苹果价格：80元')
+                break;
+            case "橘子":
+                alert('橘子价格：80元')
+                break;
+            case "榴莲":
+                alert('榴莲价格：80元')
+                break;
+            default:
+                alert("没有找到你输入的水果")
+
+        }
+
+
+    </script>
+</body>
+
+</html>
