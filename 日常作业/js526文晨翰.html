@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js526文晨翰</title>
+</head>
+
+<body>
+    <script>
+
+        console.log('----------练习1-----------');
+        // 1.找出数组 [5,6,8,15,78,62]中的偶数，并计算乘积
+        var arr = [5, 6, 8, 15, 78, 62];
+        var res = 1;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                res *= arr[i];
+            }
+        }
+        console.log('乘积为：' + res);
+
+        console.log('----------练习2-----------');
+        // 2.创建一个0-100的数组，并求出其中能被3整除的数的 乘积
+        var arr = [];
+        var res = 1;
+        for (var i = 1; i <= 100; i++) {
+            arr[arr.length] = i;
+            if (i % 3 === 0) {
+                res *= i;
+            }
+        }
+        console.log('乘积为：' + res);
+        console.log(arr);
+
+        console.log('----------练习3-----------');
+        // 3.创建一个0-100的数组，并把其中5的倍数 选中 加到新数组里
+        var arr = [];
+        var newArr = [];
+        for (var i = 1; i <= 100; i++) {
+            arr[arr.length] = i;
+            if (i % 5 === 0) {
+                newArr[newArr.length] = i;
+            }
+        }
+        console.log(arr);
+        console.log(newArr);
+
+        console.log('----------练习4-----------');
+        // 4.[23,5,6,7,3,78,34]找出数组中的所有偶数值，生成新数组
+        var arr = [23, 5, 6, 7, 3, 78, 34];
+        var newArr = [];
+        for(i = 0 ; i < arr.length ; i++){
+            if(arr[i] % 2 === 0){
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(arr);
+        console.log(newArr);
+
+    </script>
+</body>
+
+</html>

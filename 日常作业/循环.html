@@ -9,34 +9,123 @@
 
   <body>
     <script>
-      console.log("--------练习10--------");
-      // 练习10：（选做）打印正三角
-      var str = "";
-      for (i = 1; i <= 6; i++) {
-        for (r = 1; r <= 6 - i; r++) {
-          str += " ";
-        }
-        for (n = 1; n <= i; n++) {
-          str += "♥";
-          str += " ";
-        }
-        str += "\n";
-      }
-      console.log(str);
+      var sum = 0;
+      var arr = [];
+      while (code != "5") {
+        var code = prompt(
+          "欢迎使用简易计算器：" +
+            "\n" +
+            "1.加法运算；" +
+            "\n" +
+            "2.减法运算；" +
+            "\n" +
+            "3.乘法运算；" +
+            "\n" +
+            "4.除法运算；" +
+            "\n" +
+            "5.退出；" +
+            "\n" +
+            "请输入您的选项："
+        );
+        switch (code) {
+          case "1":
+            var n = parseInt(prompt("请输入你要进行运算的数字个数："));
+            arr.length = n;
+            for (i = 1; i <= n; i++) {
+              var num = Number(
+                prompt(
+                  "请输入第" + i + "个数字：" + "\n" + arr.join("+") + " = ?"
+                )
+              );
+              arr[i - 1] = num;
+              sum += num;
+            }
+            console.log("运算结果：" + arr.join("+") + " = " + sum);
+            alert("运算结果：" + arr.join("+") + " = " + sum);
+            arr = [];
+            break;
 
-      console.log("--------练习11--------");
-      // 练习11：（选做）打印等腰三角形
-      var str = "";
-      for (i = 1; i <= 5; i++) {
-        for (r = 1; r <= 5 - i; r++) {
-          str += " ";
+          case "2":
+            var n = parseInt(prompt("请输入你要进行运算的数字个数："));
+            arr.length = n;
+            for (i = 1; i <= n; i++) {
+              var num = Number(
+                prompt(
+                  "请输入第" + i + "个数字：" + "\n" + arr.join("-") + " = ?"
+                )
+              );
+              arr[i - 1] = num;
+              sum -= num;
+            }
+            console.log("运算结果：" + arr.join("-") + " = " + sum);
+            alert("运算结果：" + arr.join("-") + " = " + sum);
+            arr = [];
+            break;
+
+          case "3":
+            var n = parseInt(prompt("请输入你要进行运算的数字个数："));
+            arr.length = n;
+            for (i = 1; i <= n; i++) {
+              var num = Number(
+                prompt(
+                  "请输入第" + i + "个数字：" + "\n" + arr.join("*") + " = ?"
+                )
+              );
+              arr[i - 1] = num;
+              //   首个sum为首个num
+              if (i === 1) {
+                sum = num;
+              } else {
+                sum *= num;
+              }
+            }
+            console.log("运算结果：" + arr.join("*") + " = " + sum);
+            alert("运算结果：" + arr.join("*") + " = " + sum);
+            arr = [];
+            break;
+
+          case "4":
+            var n = parseInt(prompt("请输入你要进行运算的数字个数："));
+            arr.length = n;
+            for (i = 1; i <= n; i++) {
+              var num = Number(
+                prompt(
+                  "请输入第" + i + "个数字：" + "\n" + arr.join("/") + " = ?"
+                )
+              );
+              arr[i - 1] = num;
+              //   首个sum为首个num
+              if (i === 1) {
+                sum = num;
+              } else {
+                //   被除数不能为0
+                while (num === 0) {
+                  num = Number(
+                    prompt(
+                      "除数不能为0！请重新输入：" +
+                        "\n" +
+                        arr.join("/") +
+                        " = ?"
+                    )
+                  );
+                  arr[i - 1] = num;
+                }
+                sum = sum / num;
+              }
+            }
+            console.log("运算结果：" + arr.join("/") + " = " + sum);
+            alert("运算结果：" + arr.join("/") + " = " + sum);
+            arr = [];
+            break;
+
+          case "5":
+            alert("感谢你的使用，再见！");
+            break;
+
+          default:
+            alert("请输入正确的指令！！！");
         }
-        for (n = 1; n <= 2 * i - 1; n++) {
-          str += "♥";
-        }
-        str += "\n";
       }
-      console.log(str);
     </script>
   </body>
 </html>

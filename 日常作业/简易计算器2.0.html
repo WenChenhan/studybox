@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简易计算器</title>
+    <link rel="icon" href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fys_bnew_img%2F00%2F46%2F62%2F4LSPJQ540S.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656150850&t=7abe2707b426e825503ada49ec8bd2e9">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            background-color: darkslategray;
+        }
+        div{
+            width: 100%;
+            font-size: 150px;
+            text-align: center;
+            position: fixed;
+            bottom: 50%;
+            font-weight: 900;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>简易计算器</div>
+    <script>
+        while (code != "5") {
+            var code = prompt("欢迎使用简易计算器：" + "\n" + "1.加法运算；" + "\n" + "2.减法运算；" + "\n" + "3.乘法运算；" + "\n" + "4.除法运算；" + "\n" + "5.退出；" + "\n" + "请输入您的选项：");
+            switch (code) {
+                case "1":
+                    var arr = [];
+                    do {
+                        var mid = prompt("请输入第" + (arr.length + 1) + "个数字【输入 # 结束并进行运算】：" + "\n" + arr.join("+") + " = ?");
+                        if (mid === '#') {
+                            continue;
+                        }
+                        arr[arr.length] = Number(mid);
+                    } while (mid != '#')
+                    var res = arr[0]
+                    for (var i = 1; i < arr.length; i++) {
+                        res += arr[i];
+                    }
+                    console.log("运算结果：" + arr.join("+") + " = " + res);
+                    alert("运算结果：" + arr.join("+") + " = " + res);
+                    break;
+
+                case "2":
+                    var arr = [];
+                    do {
+                        var mid = prompt("请输入第" + (arr.length + 1) + "个数字【输入 # 结束并进行运算】：" + "\n" + arr.join("-") + " = ?");
+                        if (mid === '#') {
+                            continue;
+                        }
+                        arr[arr.length] = Number(mid);
+                    } while (mid != '#')
+                    var res = arr[0]
+                    for (var i = 1; i < arr.length; i++) {
+                        res -= arr[i];
+                    }
+                    console.log("运算结果：" + arr.join("-") + " = " + res);
+                    alert("运算结果：" + arr.join("-") + " = " + res);
+                    break;
+
+                case "3":
+                    var arr = [];
+                    do {
+                        var mid = prompt("请输入第" + (arr.length + 1) + "个数字【输入 # 结束并进行运算】：" + "\n" + arr.join("*") + " = ?");
+                        if (mid === '#') {
+                            continue;
+                        }
+                        arr[arr.length] = Number(mid);
+                    } while (mid != '#')
+                    var res = arr[0]
+                    for (var i = 1; i < arr.length; i++) {
+                        res *= arr[i];
+                    }
+                    console.log("运算结果：" + arr.join("*") + " = " + res);
+                    alert("运算结果：" + arr.join("*") + " = " + res);
+                    break;
+
+                case "4":
+                    var arr = [];
+                    do {
+                        var mid = prompt("请输入第" + (arr.length + 1) + "个数字【输入 # 结束并进行运算】：" + "\n" + arr.join("/") + " = ?");
+                        if (mid === '#') {
+                            continue;
+                        }
+                        arr[arr.length] = Number(mid);
+                    } while (mid != '#')
+                    var res = arr[0]
+                    for (var i = 1; i < arr.length; i++) {
+                        res /= arr[i];
+                    }
+                    console.log("运算结果：" + arr.join("/") + " = " + res);
+                    alert("运算结果：" + arr.join("/") + " = " + res);
+                    break;
+
+
+                case "5":
+                    alert("感谢你的使用，再见！");
+                    break;
+
+                default:
+                    alert("请输入正确的指令！！！");
+
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
