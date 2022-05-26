@@ -12,37 +12,37 @@
     <script>
         // 分支结构：
         // 1.if 
-        var age = prompt('请输入年龄')
+        // var age = prompt('请输入年龄')
 
-        if (age >= 18) {
-            alert('可以上网！')//表达式成立时执行
-        } else {
-            alert('回家敲代码')//表达式不成立时执行
-        }
+        // if (age >= 18) {
+        //     alert('可以上网！')//表达式成立时执行
+        // } else {
+        //     alert('回家敲代码')//表达式不成立时执行
+        // }
 
         // 能被4整除且不能被100整除的是闰年，能被400整除的也是闰年
-        var year = prompt('请输入年份')
-        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
-            alert('闰年！')
-        } else {
-            alert('平年！')
-        }
+        // var year = prompt('请输入年份')
+        // if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        //     alert('闰年！')
+        // } else {
+        //     alert('平年！')
+        // }
 
         // else if
 
-        var grd = Number(prompt('输入成绩'));
-        if (grd >= 90) {
-            alert('等级a')
-        } else if (grd >= 80) {
-            alert('等级b')
-        } else if (grd >= 70) {
-            alert('等级c')
-        } else if (grd >= 60) {
-            alert('d等级')
-        } else {
-            alert('e等级')
+        // var grd = Number(prompt('输入成绩'));
+        // if (grd >= 90) {
+        //     alert('等级a')
+        // } else if (grd >= 80) {
+        //     alert('等级b')
+        // } else if (grd >= 70) {
+        //     alert('等级c')
+        // } else if (grd >= 60) {
+        //     alert('d等级')
+        // } else {
+        //     alert('e等级')
 
-        }
+        // }
 
 
         // 2.switch 
@@ -57,23 +57,170 @@
         }
         */
 
-        switch (prompt('输入你需要的水果：')) {
-            case "香蕉":
-                alert('香蕉价格：80元')
-                break;
-            case "苹果":
-                alert('苹果价格：80元')
-                break;
-            case "橘子":
-                alert('橘子价格：80元')
-                break;
-            case "榴莲":
-                alert('榴莲价格：80元')
-                break;
-            default:
-                alert("没有找到你输入的水果")
+        // switch (prompt('输入你需要的水果：')) {
+        //     case "香蕉":
+        //         alert('香蕉价格：80元')
+        //         break;
+        //     case "苹果":
+        //         alert('苹果价格：80元')
+        //         break;
+        //     case "橘子":
+        //         alert('橘子价格：80元')
+        //         break;
+        //     case "榴莲":
+        //         alert('榴莲价格：80元')
+        //         break;
+        //     default:
+        //         alert("没有找到你输入的水果")
+
+        // }
+
+
+
+        // 3.for 循环
+        /*  语法：
+        for (初始化变量；条件表达式；操作表达式){
+            循环体（需要重复执行的代码）
+        }
+        */
+        // for (var i = 0; i < 10; i++) {
+        //     console.log('啊对对对');
+        // }
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     sum += i;
+        // }
+        // for ( var i = 2; i <= 100; i = i + 2) {
+        //     sum += i;
+        // }
+        // for (var i = 1; i <= 100; i = i + 2) {
+        //     sum += i;
+        // }
+
+
+        // var numO = 0;
+        // var numJ = 0;
+        // for (var i = 0; i <= 100; i++) {
+        //     if (i % 2 === 0) {
+        //         numO += i;
+        //     } else {
+        //         numJ += i;
+        //     }
+        // }
+
+        // var num3 = 0;
+        // for (var i = 0; i <= 100; i++) {
+        //     if (i % 3 === 0) {
+        //         num3 += i;
+        //     }
+        // }
+        // console.log(num3);
+
+        // var rs = parseInt(prompt('输入班级总人数：'));
+        // var sc = 0;
+        // var sum = 0;
+        // for (i = 1; i <= rs; i++) {
+        //     sc = parseInt(prompt('输入成绩：'));
+        //     console.log('学生' + i + '的成绩是：' + sc);
+        //     sum += sc;
+        // }
+        // console.log('班级共' + rs + '名学生，总成绩：' + sum + '，平均成绩：' + (sum / rs));
+        // alert('总成绩：' + sum + '，平均成绩：' + (sum / rs));
+
+
+
+
+        var str = "";
+        // for (i = 1; i <= 5; i++) {
+        //     for (r = 1; r <= 5 - i; r++) {
+        //         str += " "
+        //     }
+        //     for (n = 1; n <= 2 * i - 1; n++) {
+        //         str += "♥"
+        //     }
+        //     str += "\n"
+        // }
+        // console.log(str);
+
+        // var l = parseInt(prompt('输入列数：'));
+        var h = parseInt(prompt('输入行数：'));
+        for (i = 1; i <= h; i++) {
+            for (n = 1; n <= h - i + 1; n++) {
+                str += "♥"
+            }
+            str += "\n"
+        }
+        console.log(str);
+
+
+        // 4.while 循环
+        /*
+        while(条件表达式){
+            循环体
+        }
+        先执行条件表达式，如果为true，执行循环体代码，执行完循环体代码后，解决为true则一直执行，为false终止i循环；
+        */
+        var age = 1;
+        while (age <= 10) {
+            console.log('我今年' + age + '岁了！');
+            age++;
+        }
+
+        var num = 0;
+        var sum = 0;
+        var sumO = 0;
+        var sumJ = 0;
+        while (num < 100) {
+            num++
+            if (num % 2 === 0) {
+                sumO += num
+            } else {
+                sumJ += num
+            }
+        }
+        console.log(sumO, sumJ);
+
+        /*
+        do{
+       循环体
+       }while(条件表达式)
+       
+       先执行循环体，再判断表达式是否为true   至少会执行1次
+        */
+       var s = 0;
+       var n = 0;
+       do{
+           var love = prompt('请输入：我是傻逼')
+       }while(love !== '我是傻逼')
+       alert('你说得对！')
+       do{
+           n++
+           s += n
+       }while(n < 100)
+       console.log(s);
+
+
+    //    6.contunue关键字：跳出当前循环
+    for(var i = 1;i<=5;i++){
+        if(i === 3){
+            continue
 
         }
+        console.log(i);
+    }
+
+    for(var i = 1;i<=5;i++){
+        if(i === 3){
+            break
+
+        }
+        console.log(i);
+    }
+
+
+
+
+
 
 
     </script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      console.log("--------练习10--------");
+      // 练习10：（选做）打印正三角
+      var str = "";
+      for (i = 1; i <= 6; i++) {
+        for (r = 1; r <= 6 - i; r++) {
+          str += " ";
+        }
+        for (n = 1; n <= i; n++) {
+          str += "♥";
+          str += " ";
+        }
+        str += "\n";
+      }
+      console.log(str);
+
+      console.log("--------练习11--------");
+      // 练习11：（选做）打印等腰三角形
+      var str = "";
+      for (i = 1; i <= 5; i++) {
+        for (r = 1; r <= 5 - i; r++) {
+          str += " ";
+        }
+        for (n = 1; n <= 2 * i - 1; n++) {
+          str += "♥";
+        }
+        str += "\n";
+      }
+      console.log(str);
+    </script>
+  </body>
+</html>

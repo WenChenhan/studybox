@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>525练习</title>
+</head>
+
+<body>
+    <script>
+
+
+        console.log('--------练习1--------');
+        // 练习1.：在死循环的循环体中执行弹出提示框，假设密码为123456，如果输入正确则结束循环。
+        // for (var i = 0; i < 100; i--) {
+        //     var password = prompt('输入密码以推出死循环')
+        //     if (password === '123456') {
+        //         console.log('已退出死循环');
+        //         break;
+        //     }
+        // }
+
+        do{
+            var password = prompt('输入密码以推出死循环')
+            if (password === '123456') {
+                console.log('已退出死循环');
+                break;
+            }
+        }while(true)
+
+        console.log('--------练习2--------');
+        // 练习2：计算1~100之间所有能被7整除的数字的和
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 === 0) {
+                sum += i;
+            }
+        }
+        console.log('1~100之间所有能被7整除的数字的和:' + sum);
+
+
+        console.log('--------练习3--------');
+        // 练习3：打印2000~2050年之间所有的闰年
+        for (var y = 2000; y <= 2050; y++) {
+            if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0) {
+                console.log(y);
+            }
+        }
+
+
+        console.log('--------练习4--------');
+        // 练习4：假设你有10000元，银行的利率是4%，5年后然哥一共能拿到多少钱
+        var c = 10000;
+        for (i = 1; i <= 5; i++) {
+            c = c + (c * 0.04)
+        }
+        console.log('5年后你可以获得（复利）：' + c);
+
+
+        console.log('--------练习5--------');
+        // 练习5：使用死循环计算1~10之间所有整数的乘积
+        var n = 1;
+        var j = 1;
+        for (var i = 0; i < 100; i--) {
+            n++;
+            j *= n;
+            if (n === 10) {
+                console.log('乘积为：' + j);
+                break;
+            }
+        }
+
+
+        console.log('--------练习6--------');
+        // 练习6：计算1~100之间所有整数的和，一旦当总和超过4000，结束循环，并打印当前的和
+        var sum = 0;
+        for (var i = 1; 1 <= 100; i++) {
+            sum += i;
+            if (sum > 4000) {
+                console.log('当前的和：' + sum);
+                break;
+            }
+        }
+
+
+        console.log('--------练习7--------');
+        // 练习7：打印1~100之间所有的偶数，（遇到奇数就跳过）
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                console.log(i);
+            } else {
+                continue;
+            }
+        }
+
+        console.log('--------练习8--------');
+        // 练习8：打印80 75 70 65 60
+        var num = 80;
+        while (num !== 55) {
+            console.log(num);
+            num -= 5;
+        }
+
+        console.log('--------练习9--------');
+        // 练习9：打印60 63 66 69 72 75（步长每次加3）
+        var num = 60;
+        do {
+            console.log(num);
+            num += 3;
+        } while (num !== 78)
+
+
+        console.log('--------练习10--------');
+        // 练习10：（选做）打印正三角
+        var str = "";
+        for (i = 1; i <= 6; i++) {
+            for (r = 1; r <= 6 - i; r++) {
+                str += " "
+            }
+            for (n = 1; n <= i; n++) {
+                str += "♥"
+                str += " "
+            }
+            str += "\n"
+        }
+        console.log(str);
+
+
+        console.log('--------练习11--------');
+        // 练习11：（选做）打印等腰三角形
+        var str = "";
+        for (i = 1; i <= 5; i++) {
+            for (r = 1; r <= 5 - i; r++) {
+                str += " "
+            }
+            for (n = 1; n <= 2 * i - 1; n++) {
+                str += "♥"
+            }
+            str += "\n"
+        }
+        console.log(str);
+
+
+        console.log('--------简易ATM--------');
+        //   - 题目描述：
+        //   - 里面现存有  100 块钱。
+        //   - 如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提示框
+        //   - 如果取钱，就减去取的钱数，之后弹出显示余额提示框
+        //   - 如果显示余额，就输出余额
+        //   - 如果退出，弹出退出信息提示框
+        var mo = 100;
+        for (i = 0; i < 100; i--) {
+            var co = prompt('请输入您要的操作：' + '\n' + '1.存钱' + '\n' + '2.取钱' + '\n' + '3.显示余额' + '\n' + '4.退出')
+            if (co === '1') {
+                var add = parseInt(prompt('输入您的存款金额：'))
+                if (isNaN(add) == true) {
+                    alert('未输入金额，返回主界面！')//避免用户空值时点确定，返回NaN，污染余额使其变为NaN；
+                } else {
+                    mo += add
+                    console.log('用户操作：存款：' + add + '元' + '，余额' + mo + '元');
+                    alert('存款成功！你的余额为：' + mo + '元')
+                }
+            } else if (co === '2') {
+                var del = parseInt(prompt('输入您的取款金额：'))
+                if (del > mo) {
+                    alert('余额不足！')
+                } else if (isNaN(del) == true) {
+                    alert('未输入金额，返回主界面！')//避免用户空值时点确定，返回NaN，污染余额使其变为NaN；
+                }
+                else {
+                    mo -= del
+                    console.log('用户操作：取款：' + del + '元' + '，余额' + mo + '元');
+                    alert('取款成功！你的余额为：' + mo + '元')
+                }
+
+            } else if (co === '3') {
+                console.log('用户操作：查询余额，剩余' + mo + '元');
+                alert('你的余额为：' + mo + '元')
+            } else if (co === '4') {
+                alert('感谢你的使用！再见！')
+                break;
+            } else {
+                alert('请输入正确的命令！')
+            }
+        }
+
+    </script>
+</body>
+
+</html>
