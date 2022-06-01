@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>石头剪刀布</title>
+    <link rel="icon"
+        href="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.puchedu.cn%2Fuploads%2F1%2F26%2F4083966318%2F2285034024.jpg&refer=http%3A%2F%2Fimg.puchedu.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1656229357&t=3bb79a9d065d3efbae8e08d623135451">
+</head>
+
+<body>
+    <script>
+        var win = 0;
+        var lose = 0;
+        var pin = 0;
+        do {
+            var gamer = prompt('石头【0】？剪刀【1】？布【2】？');
+            var cpt = parseInt((Math.random() * (2 - 0 + 1)));
+            if (cpt === 0) {
+                var n = '石头';
+            } else if (cpt === 1) {
+                var n = '剪刀';
+            } else if (cpt === 2) {
+                var n = '布';
+            }//将数字转化为文字，方便输出
+            var res = null;
+            switch (gamer) {
+                case '0':
+                    cpt == 0 ? res = '平局' : (cpt == 1 ? res = '你赢了' : res = '你输了');//和电脑出拳进行对比，得出结果
+                    res == '你赢了' ? win++ : (res == '你输了' ? lose++ : (res == '平局' ? pin++ : null))//根据结果计算得分
+                    alert(res + '!' + '\n' + '你的出拳：石头，电脑出拳：' + n + '\n' + '比分：' + win + ':' + lose);
+                    break;
+
+                case '1':
+                    cpt == 1 ? res = '平局' : (cpt == 2 ? res = '你赢了' : res = '你输了');
+                    res == '你赢了' ? win++ : (res == '你输了' ? lose++ : (res == '平局' ? pin++ : null))
+                    alert(res + '!' + '\n' + '你的出拳：剪刀，电脑出拳：' + n + '\n' + '比分：' + win + ':' + lose);
+                    break;
+
+                case '2':
+                    cpt == 2 ? res = '平局' : (cpt == 0 ? res = '你赢了' : res = '你输了');
+                    res == '你赢了' ? win++ : (res == '你输了' ? lose++ : (res == '平局' ? pin++ : null))
+                    alert(res + '!' + '\n' + '你的出拳：布，电脑出拳：' + n + '\n' + '比分：' + win + ':' + lose);
+                    break;
+
+                default:
+                    alert('非法指令！');
+            }
+
+        } while (lose != 3 && win != 3)
+        alert('游戏结束：' + '\n' + '你的得分：' + win + '\n' + '电脑得分：' + lose + '\n' + '平局：' + pin)
+
+    </script>
+</body>
+
+</html>

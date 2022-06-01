@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、模拟注册以及登陆：
+        // 1.首先进行注册。
+        // 2.当用户确定了用户名和密码后，注册成功，保存下用户输入的用户名以及密码。
+        // 3.注册成功后，进行登录，让用户输入账号密码。账号密码匹配成功表示登录成功，进入到欢迎界面。
+        // 3.登陆最多只能三次，如果第三次还没有成功直接退出程序，显示：今日机会用完，明天再来。
+        // 4.每次输入错误时，提示是否继续输入，y---继续  其他为退出  。如果选择n，显示：谢谢使用。
+
+
+
+        var userArr = [];
+        alert('请先注册！');
+        userArr[0] = prompt('账户注册' + '\n' + '请输入用户名：');
+        while (userArr[0] == '') {
+            userArr[0] = prompt('账户注册' + '\n' + '用户名不能为空，请重新输入！');
+        }
+        userArr[1] = prompt('账户注册' + '\n' + '请输入密码：');
+        while (userArr[1] == '') {
+            userArr[1] = prompt('账户注册' + '\n' + '密码不能为空，请重新输入！');
+        }
+        alert('注册成功，请登录！')
+        var user_name = prompt('登录' + '\n' + '请输入用户名：');
+        while (user_name != userArr[0]) {
+            user_name = prompt('登录' + '\n' + '未找到用户名！请重新输入：');
+        }
+        var user_password = prompt('登录' + '\n' + '请输入密码：');
+        switch (user_password) {
+            case userArr[1]:
+                alert('登录成功！欢迎使用！');
+                break;
+
+            default:
+                for (i = 3; i > 0; i--) {
+                    var mid = prompt('密码错误！你还有' + i + '次机会。是否重新输入？' + '\n' + '重新输入请输入y，退出请输入n！')
+                    if (mid == 'y') {
+                        user_password = prompt('登录' + '\n' + '重新输入（你还有' + i + '次机会）：');
+                        if (user_password == userArr[1]) {
+                            alert('登录成功！欢迎使用！');
+                            break;
+                        }
+                    } else if (mid == 'n') {
+                        alert('谢谢使用！')
+                        break;
+                    } else {
+                        break;
+                    }
+                    if (i == 1) {
+                        alert('今日机会已用完，明天再来！')
+                        break;
+                    }
+                }
+        }
+
+
+        //         2、计算机和玩家玩石头剪刀布的游戏。0代表石头，1代表剪刀 ，2代表布。
+
+        var win = 0;
+        var lose = 0;
+        var pin = 0;
+        do {
+            var gamer = prompt('石头【0】？剪刀【1】？布【2】？');
+            var cpt = parseInt((Math.random() * (2 - 0 + 1)));
+            if(cpt === 0){
+                var n = '石头';
+            }else if(cpt === 1){
+                var n = '剪刀';
+            }else if(cpt === 2){
+                var n = '布';
+            }//将数字转化为文字，方便输出
+            var res = null;
+            switch (gamer) {
+                case '0':
+                    cpt == 0 ? res = '平局' : (cpt == 1 ? res = '你赢了' : res = '你输了');//和电脑出拳进行对比，得出结果
+                    res == '你赢了' ? win++ :(res == '你输了'  ? lose++ : (res == '平局' ? pin++ : null));//根据结果计算得分
+                    alert(res + '!' + '\n' + '你的出拳：石头，电脑出拳：' + n + '\n' + '比分：' + win +':'+ lose );
+                    break;
+
+                case '1':
+                    cpt == 1 ? res = '平局' : (cpt == 2 ? res = '你赢了' : res = '你输了');
+                    res == '你赢了' ? win++ :(res == '你输了'  ? lose++ : (res == '平局' ? pin++ : null));
+                    alert(res + '!' + '\n' + '你的出拳：剪刀，电脑出拳：' + n + '\n' + '比分：' + win +':'+ lose );
+                    break;
+
+                case '2':
+                    cpt == 2 ? res = '平局' : (cpt == 0 ? res = '你赢了' : res = '你输了');
+                    res == '你赢了' ? win++ :(res == '你输了'  ? lose++ : (res == '平局' ? pin++ : null));
+                    alert(res + '!' + '\n' + '你的出拳：布，电脑出拳：' + n + '\n' + '比分：' + win +':'+ lose );
+                    break;
+
+                default:
+                    alert('非法指令！');
+            }
+
+        } while (lose != 3 && win != 3)
+        alert('游戏结束：' + '\n' + '你的得分：' + win + '\n' + '电脑得分：' + lose + '\n' + '平局：' + pin)
+
+
+//  游戏退出条件：   玩家赢三次，或玩家输三次。
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

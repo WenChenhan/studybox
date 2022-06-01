@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组作业531文晨翰</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------练习1------------');
+        // 1.找出元素 98 在给[5,98,45,1,3,66,44,11]中的位置，如果数组中存在 item，则返回元素在数组中的位置，否则返回 -1。
+        var arr = [5, 98, 45, 1, 3, 66, 44, 11];
+        if (arr.indexOf(98) == -1) {
+            console.log(-1);
+        } else {
+            console.log(`98在数组中的位置是：${arr.indexOf(98)}`)
+        }
+
+
+
+        console.log('---------练习2------------');
+        // 2.计算给定数组  [5,98,45,1,3,66,44,11]中所有元素的总和
+        var arr = [5, 98, 45, 1, 3, 66, 44, 11];
+        var sum = 0;
+        for (i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        console.log(`数组中所有元素的总和为${sum}`);
+
+
+
+        console.log('---------练习3------------');
+        // 3.移除数组 [55,89,41,6,55,89,11,23,66,89] 中的所有值与 89 相等的元素。
+        var arr = [89, 89, 41, 6, 55, 89, 11, 23, 66, 89];
+        console.log(`数组移除89前：${arr}`);
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == 89) {
+                arr.splice(i, 1)
+                i--;
+            }
+        }
+        console.log(`数组移除89后：${arr}`);
+
+
+        console.log('---------练习4------------');
+        // 4.统计数组 [48,1,0,66,25,89,44,15,69,48,0,66] 中值等于 66 的元素出现的次数
+        var arr = [48, 1, 0, 66, 25, 89, 44, 15, 69, 48, 0, 66];
+        var count = 0;
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == 66) {
+                count++;
+            }
+        }
+        console.log(`66在数组中出现的次数：${count}`);
+
+
+        console.log('---------练习5------------');
+        // 5.两个数组[11,22,36,99,78] ,[17,5,66,14,0,33]可以转为的最大字符串
+        var arr1 = [11, 22, 36, 99, 78];
+        var arr2 = [17, 5, 66, 14, 0, 33];
+        var arr = arr1.concat(arr2);
+        console.log(arr);
+        arr.sort();
+        arr.reverse();
+        console.log(`最大字符串：${arr.join('')}`);
+
+
+        console.log('---------练习6------------');
+        // 6.班上有十个同学，输入十位同学的成绩，按照从小到大的成绩，分为5个学习小组，(五个数组)
+        var scr = [];
+        for (i = 0; i < 10; i++) {
+            scr[i] = parseInt(prompt(`请输入第${i + 1}个同学的成绩：`))
+        }
+        console.log(`排序前的成绩：${scr}`);
+        for (i = 0; i < scr.length; i++) {
+            for (j = 0; j < scr.length - 1 - i; j++) {
+                if (scr[j] > scr[j + 1]) {
+                    var mid = scr[j];
+                    scr[j] = scr[j + 1];
+                    scr[j + 1] = mid;
+                }
+            }
+        }
+        console.log(`排序后的成绩：${scr}`);
+        var arr1 = scr.slice(0,2);
+        console.log(`第一组：${arr1}`);
+
+        var arr2 = scr.slice(2,4);
+        console.log(`第二组：${arr2}`);
+
+        var arr3 = scr.slice(4,6);
+        console.log(`第三组：${arr3}`);
+
+        var arr4 = scr.slice(6,8);
+        console.log(`第四组：${arr4}`);
+
+        var arr5 = scr.slice(8,10);
+        console.log(`第五组：${arr5}`);
+
+    </script>
+</body>
+
+</html>

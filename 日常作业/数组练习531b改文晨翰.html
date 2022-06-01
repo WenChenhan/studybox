@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------练习1----------');
+        //  1.随机生成一个 20~ 50 之间的数字，并让用户输入一个数字，
+        //   如果大于该数字，就提示，数字大了，继续猜；
+        //   如果小于该数字，就提示数字小了，继续猜；
+        //   如果等于该数字，就提示猜对了， 结束程序。
+        //   一共只有10次机会
+        var num = parseInt((Math.random() * (50 - 20 + 1) + 20));
+        console.log(`随机数：${num}`);
+        for (i = 1; i <= 10; i++) {
+            var uesrNum = parseInt(prompt('请输入一个数字：'))
+            if (isNaN(uesrNum)) {
+                alert('你输入的不是一个数字，请重新输入！！！');
+                i--;
+            }
+            if (uesrNum > num) {
+                alert(`数字大了！继续猜，你还有${10 - i}次机会!`);
+            } else if (uesrNum < num) {
+                alert(`数字小了了！继续猜，你还有${10 - i}次机会!`);
+            } else if (uesrNum == num) {
+                alert(`你猜对了！`);
+                break;
+            }
+        }
+
+
+        console.log('---------练习2----------');
+        // 2.查找字符串’abcoefoxyozzopp’中所有o出现的位置以及次数
+        var arr = Array.from('abcoefoxyozzopp');
+        console.log(arr);
+        var count = 0;
+        var site = [];
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i] == 'o') {
+                count++;
+                site.push(i);
+            }
+        }
+        console.log(`字符串中共出现${count}次o，分别位于${site.join('、')}!`);
+
+
+
+        console.log('---------练习3----------');
+        // 3.判断一个字符串 ‘abcoefoxyozzopp’ 中出现次数最多的字符，并统计其次数
+        var arr = Array.from('abcoefoxyozzzzopppp');
+        console.log(arr);
+        var arr1 = Array.from(new Set(arr));//除重
+        console.log(arr1);
+        var arr2 = [];//遍历每个元素，得出出现的次数，arr1和arr2元素分别对应！
+        for (i = 0; i < arr1.length; i++) {
+            var count = 0;
+            for (j = 0; j < arr.length; j++) {
+                if (arr1[i] == arr[j]) {
+                    count++
+                }
+            }
+            console.log(`元素${arr1[i]}共出现${count}次！`);
+            arr2.push(count);
+        }
+        console.log(arr2);
+        var max = arr2[0];
+        for (i = 0; i < arr2.length; i++) {
+            if (arr2[i] > max) {
+                max = arr2[i];
+            }
+        }
+        var arr3 = [];//当字符串中有多个字符出现相同的max次数，共同输出！
+        for (i = 0; i < arr2.length; i++) {
+            if (arr2[i] == max) {
+                arr3.push(i);
+            }
+        }
+        console.log(arr3);
+        var output = [];
+        for (i = 0; i < arr3.length; i++) {
+            output.push(arr1[arr3[i]]);
+        }
+        console.log(`字符串中出现最多的字符是${output.join(' & ')},共出现${max}次！`);
+
+
+
+    </script>
+</body>
+
+</html>

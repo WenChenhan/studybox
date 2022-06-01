@@ -54,12 +54,14 @@
 
         //arr[] 可以通过索引把对应的元素修改为新的值，因此，对Array的索引进行赋值会直接修改这个Array;
         arr[1] = '2';
+        arr[3] = 1;
         console.log(arr);  // arr现在变为[1, '2', 3],注意：对数组索引之外（越界）的数进行赋值，也会引起数组长度的变化
 
         //indexOf返回某个元素的索引
         console.log(arr.indexOf(1)); //返回 0 ,数组内没有的元素会返回 -1
+        console.log(arr.lastIndexOf(1));
 
-        //slice 截取数组的部分元素,slice()可以复制一个数组
+        //slice 截取数组的部分元素,slice()可以复制一个数组::查询数组
         var arr = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
         arr.slice(0, 3); // 从索引0开始，到索引3结束，但不包括索引3: ['A', 'B', 'C']
         arr.slice(3); // 从索引3开始到结束: ['D', 'E', 'F', 'G']
@@ -70,9 +72,17 @@
         console.log(arr.join('|'));
 
         //push 在数组后面加一个元素 pop 减去数组最后面的元素；unshift 在数组最前面加一个元素  shift 减去数组最前面的元素；
-        console.log('==========================');
-        // arr1中大于20的数赋值给arr2
+        var arr1 = [];
+        var a = arr1.push(1);
+        var b = arr1.push(2);
+        console.log(a);
+        console.log(b);//重要：push 和 unshift方法返回的是数组的长度；
 
+
+
+        console.log('==========================');
+
+        // arr1中大于20的数赋值给arr2
         var arr1 = [2, 5, 90, 84, 78, 18, 28, 22, 29];
         var arr2 = []
         for (i = 0; i < arr1.length; i++) {
@@ -98,15 +108,56 @@
 
 
 
+        console.log('==========================');
+        //splice 参数（n，m，i） n=从第几个元素起  m=删除几个元素  i=替换的元素
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(arr);
+        //删除
+        arr.splice(0, 1);//返回被删除的元素
+        console.log(arr);
+        //替换
+        arr.splice(0, 1, 0.5)//返回被替换的元素
+        console.log(arr);
 
+
+        console.log(arr.toString());
+        console.log(arr.join('-'));//toString 和join 不会改变原数组
+
+
+        //sort 排序方法 a- b 升序 b - a降序
+        var arr = [12, 45, 67, 34, 12, 89, 23, 56]
+        console.log(arr.sort(function (a, b) {
+            return b - a;
+        }));
+
+
+        //去重
+        var arr = [1,1,2,2,3,3,4,5];
+        var newArr = [];
+        for(i = 0 ;i < arr.length ; i++){
+            if(newArr.indexOf(arr[i]) === -1){
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(arr,newArr);
+
+        //includes 查询数组是否包含某个元素，返回布尔值
+        var arr = [23,44,13,42,51];
+        var d = arr.includes(23);
+        console.log(d);
+
+
+
+
+        console.log('==========================');
         // 练习：将1949年到2022年之间所有的闰年放在runYear数组里面
         var runYear = [];
-        for (i= 1949 ; i <= 2022 ; i++){
-            if((i % 4 === 0 && i % 100 !== 0) || i % 400 === 0){
+        for (i = 1949; i <= 2022; i++) {
+            if ((i % 4 === 0 && i % 100 !== 0) || i % 400 === 0) {
                 runYear.push(i);
             }
         }
-        console.log(runYear,runYear.length);
+        console.log(runYear, runYear.length);
 
     </script>
 </body>
