@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <!-- 引用js文件 -->
+    <script src="./29.函数的JS文件.js"></script>
+</head>
+
+<body>
+    <script>
+        //函数：代表了一个功能模块
+
+        /* 
+        语法格式：
+        function 函数名([形参1,形参2,形参3.。。]){
+            函数体；
+            [return]
+        }
+
+        1/function   函数的定义关键词
+        2/函数名      自己起（标识符）  规则：1、字母、数字、_、$构成  不能以数字开头；  
+                                           2、不能是关键字或者保留字；
+                                           3、见名知意；
+                                           4、驼峰命名：小驼峰 myName
+
+        3/形参：可以有可以没有，每个形参之间用【,】隔开，用来接收外部传值的变量
+        4/{}不能省略
+        5/函数体：实现具体功能的代码模块
+        6/return ：可选项  1、结束函数；2、将值返回
+
+        void 无返回值
+
+        分类：
+        无参无返回值
+        有参无返回值
+        无参无返回值
+        有参有返回值
+
+        写函数时先分析需不需要形参，需不需要返回值（数据类型）
+        函数不会自动执行，只有被调用时才会被执行
+
+        函数调用：  函数名();
+
+        函数在定义是()里的是形参，形参是不占内存的；调用时()里的是实参，实参把值传给形参
+        形参在被调用时才在内存中分配空间进行储存数据，函数调用完成后形参所分配的空间被释放
+
+
+        实参 > 形参  忽略多余的部分
+        实参 < 形参  少的部分为undifind
+        
+        arguments 对象 伪数组存放所有的实参 1、length方法  2、能用下标获取每个元素的值；
+
+        实参和形参的传值方式：1、值的传递：单向传值  实参 --->形参   形参不会作用于实参；
+                            2、址的传递； 实参把地址传递给形参，控制同一个地址片段，形参修改会影响实参  传递方式是双向的
+
+
+
+
+        a insranceof  b 判断a是否是b这种类型的数据;返回的是boolean类型
+        */
+        console.log('--------------值传递------------');
+        function zhiChuanDi(num) {
+            num = 5;
+            console.log(num);
+        }
+
+        var m = 10;
+        console.log(m);
+        zhiChuanDi(m);//传递值，调用函数不影响实参的值
+        console.log(m);
+
+
+        console.log('-------------址传递-------------');
+        function ziChuanDi(arr){
+            arr[0] = 99;
+            console.log(arr);
+        }
+        var nums = [13,15,78,56];
+        console.log(nums);
+        ziChuanDi(nums);//址传递，调用函数访问地址片段并修改推空间中的数据，实参再次访问时数据已被改变
+        console.log(nums);
+
+
+
+
+
+
+        //一、无参无返回值：打印出5行 每行10个*
+        //函数功能：打印出5行 每行10个*
+        //形参： 无
+        //返回值： 无
+
+        // function printStar() {//定义函数
+        //     for (var i = 0; i < 5; i++) {
+        //         for (var j = 0; j < 10; j++) {
+        //             document.write('*');
+        //         }
+        //         document.write('<br>');
+        //     }
+        // }
+        // printStar();//执行函数
+
+        // document.write('<hr>')
+        //二、有参无返回值：打印出n行 每行m个特定的字符  调用时必须传入实参  
+        //函数功能：打印出n行 每行m个[char]
+        //形参： n：行数   number
+        //      m：每行的个数   number
+        //      char：输出的图案   string
+        //返回值： 无
+
+        // function printStarnm(n, m, char) {//定义函数
+        //     for (var i = 0; i < n; i++) {
+        //         for (var j = 0; j < m; j++) {
+        //             document.write(char);
+        //         }
+        //         document.write('<br>');
+        //     }
+        // }
+        // printStarnm(20, 10, '￥');//执行函数
+
+        jiujiu();
+
+        document.write('<hr>');
+
+        xinxin(10);
+
+        document.write('<hr>');
+
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr.push(Math.floor(Math.random() * 100 + 1));
+        }
+        document.write(maopao(arr));
+
+
+        document.write('<hr>');
+
+
+        document.write(`1-100的和的一半为:${sum1_100() / 2}`);
+
+        document.write('<hr>');
+
+        // document.write(runnian(parseInt(prompt('请输入年份'))));
+
+        // isVoildYear(prompt('请输入年份'), prompt('请输入月份'), prompt('请输入几号')) ? document.write(`有效日期！`) : document.write(`无效日期！`);
+    </script>
+</body>
+
+</html>

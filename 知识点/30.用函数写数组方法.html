@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用函数写数组方法</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------------数组排序------------------');
+        //数组排序sort
+        //形参:1.arr Array类型  ,2.xu number类型 1为升序 0为降序 其他为无效退出
+        //返回值 void 注：会改变原数组
+        function sort(arr, xu) {
+            if (!(arr instanceof Array) || isNaN(xu)) {
+                return;
+            }
+            if (xu == 1) {
+                for (let i = 0; i < arr.length - 1; i++) {
+                    for (let j = 0; j < arr.length - 1 - i; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                        }
+                    }
+                }
+            } else if (xu == 0) {
+                for (let i = 0; i < arr.length - 1; i++) {
+                    for (let j = 0; j < arr.length - 1 - i; j++) {
+                        if (arr[j] < arr[j + 1]) {
+                            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                        }
+                    }
+                }
+            } else {
+                return;
+            }
+        }
+
+
+        var nums = [34, 67, 12, 9, 45, 100, 23, 99];
+        console.log(nums);
+        sort(nums, 0);
+        console.log(nums);
+        sort(nums, 1);
+        console.log(nums);
+
+
+        console.log('---------------翻转数组------------------');
+        //翻转数组
+        //形参:arr Array类型 
+        //返回值 newArr 返回翻转后的新数组，不改变原数组
+        function resever(arr) {
+            if (!(arr instanceof Array)) {
+                return;
+            }
+            var newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                newArr[i] = arr[i];
+            }
+            for (let i = 0; i < newArr.length / 2; i++) {
+                [newArr[i], newArr[newArr.length - 1 - i]] = [newArr[newArr.length - 1 - i], newArr[i]];
+            }
+            return newArr;
+        }
+
+        var strs = ['html', 'css', 'js', 'vue'];
+        console.log(strs);
+        console.log(resever(strs));
+        console.log(strs);
+
+
+        console.log('----------------数组的最大值-----------------');
+        //求数组的最大值
+        //形参:arr Array类型 
+        //返回值 max number类型  返回数组的最大值
+        function maxArr(arr) {
+            if (!(arr instanceof Array)) {
+                return;
+            }
+            var max = arr[0];
+            for (let i = 0; i < arr.length; i++) {
+                max = arr[i] > max ? arr[i] : max;
+            }
+            return max;
+        }
+
+
+        var nums = [34, 67, 125, 9, 45, 120, 23, 99];
+        console.log(nums);
+        console.log(`数组的最大值是：${maxArr(nums)}`);
+
+
+        console.log('---------------查询数字是否在数组中------------------');
+        //判断一个数是否在数组中存在
+        //形参:1.arr Array类型 需查找的数组 2.num number类型 需查找的数 
+        //返回值 boolean类型 是否在数组中，在返回true 不在返回false
+        function isInArr(arr, num) {
+            if (!(arr instanceof Array) || isNaN(num)) {
+                return;
+            }
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === num) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        var zhiShu2_100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
+        var num = parseInt(prompt('请输入一个数以判断其是否在数组【100以内的所有素数】里面！'));
+        isInArr(zhiShu2_100, num) ? console.log(`${num}在数组中！它是素数！`) : console.log(`${num}不在数组中！它不是素数！`);
+
+
+        console.log('---------------数组去重------------------');
+        //对数组去重
+        //形参:arr Array类型 需去重的数组
+        //返回值 newArr 数组类型 返回一个新的去完重的新数组，原数组不变
+        function removeDup(arr) {
+            if (!(arr instanceof Array)) {
+                return;
+            }
+            var newArr = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (!(isInArr(newArr, arr[i]))) {
+                    newArr[newArr.length] = arr[i];
+                }
+            }
+            return newArr;
+        }
+
+
+        var arr = [1, 2, 1, 2, 8, 3, 3, 4, 4, 5, 6, 2, 4, 7];
+        console.log(arr);
+        console.log(removeDup(arr));
+
+
+
+    </script>
+</body>
+
+</html>

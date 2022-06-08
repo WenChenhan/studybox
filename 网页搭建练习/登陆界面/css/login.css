@@ -1,0 +1,144 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #e1e8ee;
+}
+
+.login-box {
+  width: 350px;
+  height: 550px;
+  background-image: url(../img/bac.jpg);
+  background-repeat: no-repeat;
+  background-position: -75px -235px;
+  margin: 0 auto;
+  margin-top: 150px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  margin-top: 160px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.login-zc {
+  width: 230px;
+  height: 101px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.login-zc > * {
+  width: 100%;
+  border: 0px;
+}
+
+.login-zc > input {
+  padding: 10px 0px 10px 10px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.login-zc > span {
+  display: block;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+
+.zhuche-btn{
+    display: block;
+    width: 230px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 0px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+}
+
+.zhuche-btn:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+#login-dl{
+    width: 350px;
+    height: 70px;
+    position: absolute;
+    bottom: 0px;
+    background-color: white;
+    transition: all 0.3s;
+    
+}
+
+.login-dl-zhezhao{
+    width: 550px;
+    height: 150px;
+    position: absolute;
+    top:-25px;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: white;
+    border-radius: 50%;
+}
+
+.shou{
+    cursor: pointer;
+}
+
+
+
+#login-dl:hover #login-dl-bot{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#login-dl-bot{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+    margin: 0 auto;
+    margin-top: 40px;
+    transition: all 0.3s;
+}
+
+#login-dl-top{
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    top: -80px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    transition: all 0.3s;
+    width: 100%;
+    height: 50px;
+    
+}
+
+#login-dl-top i{
+    margin-right: 10px;
+}

@@ -567,19 +567,19 @@
         console.log('-------程序27--------');
         // 【程序27】
         // 题目：求100之内的素数 
-        // var arr = [];
-        // for (i = 1; i <= 100; i++) {
-        //     var or = 0;
-        //     for (j = 2; j < i; j++) {
-        //         if (i % j == 0) {
-        //             or = 1;
-        //         }
-        //     }
-        //     if (or == 0) {
-        //         arr.push(i);
-        //     }
-        // }
-        // console.log(arr);
+        var arr = [];
+        for (i = 1; i <= 100; i++) {
+            var or = 0;
+            for (j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    or = 1;
+                }
+            }
+            if (or == 0) {
+                arr.push(i);
+            }
+        }
+        console.log(arr);
 
 
         console.log('-------程序28--------');

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、函数：判断一个数是否是质数。
+        //形参：num 用户输入的数字 number
+        //返回值：boolean
+        function isZhiShu(num) {
+            num = parseInt(num);
+            if (isNaN(num)) {
+                alert('输入的不是一个数字！')
+                return false;
+            }
+            var panDuan = 1;
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        isZhiShu(prompt('请输入一个数字，判断其是否为质数！')) ? document.write('是一个质数！') : document.write('不是一个质数！');
+
+
+        document.write('<hr>');
+
+        // 2、函数： 求两个数之间所有偶数之和。
+        //形参：n m 用户输入的两个数 number
+        //返回值：sum 和 number
+        function sumOfOum_n(m, n) {
+            m = parseFloat(m);
+            n = parseFloat(n);
+            if (isNaN(m) || isNaN(n)) {
+                alert('输入的不是数字！！！');
+                return NaN;
+            }
+            if (m > n) {
+                // var mid = m;
+                // m = n;
+                // n = mid;
+                [m, n] = [n, m];
+            } //调整两个数的大小顺序 
+            console.log(m, n);
+            var sum = 0;
+            for (let i = m; i <= n; i++) {
+                if (i % 2 == 0) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+
+
+        var m = prompt('请输入数字1：');
+        var n = prompt('请输入数字2：');
+        document.write(`${m}和${n}之间所有偶数的和为${sumOfOum_n(m, n)}`)
+    </script>
+</body>
+
+</html>

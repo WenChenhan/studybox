@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/login.js"></script>
+</head>
+<body>
+    <div class="login-box">
+        <h3>注册</h3>
+        <div class="login-zc">
+            <input type="text" placeholder="请输入用户名" id="userName">
+            <span class="hengge"></span>
+            <input type="password" placeholder="请输入密码" id="userPassword">
+        </div>
+        <button class="zhuche-btn" onclick="register()">注册</button>
+
+        <div id="login-dl" class='shou' onclick="goUp()">
+            <div class="login-dl-zhezhao">
+                <div id="login-dl-bot">
+                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    <p>已有账号？去登陆</p>
+                </div>
+            </div>
+            <h3 style="color: black;margin-top:70px;z-index: 1;position: relative;">登录</h3>
+            <div class="login-zc" style="border: 1px solid #f2f2f2;">
+                <input type="text" placeholder="请输入用户名" id="inputName">
+                <span class="hengge"></span>
+                <input type="password" maxlength="90"  placeholder="请输入密码" id="inputPassword">
+            </div>
+            <button class="zhuche-btn" onclick="login()">登录</button>
+        </div>
+
+        <div id="login-dl-top"  onclick="goDown()">
+            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+            <p>没有账号？去注册</p>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

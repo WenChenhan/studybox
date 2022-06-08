@@ -6,6 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数组</title>
+
+    <style>
+        .tb td {
+            width: 60px;
+            height: 30px;
+            /* border-bottom: 1px solid gray; */
+            text-align: center;
+        }
+
+        .tb tr:nth-child(2n+1) {
+            background-color: aliceblue;
+
+        }
+
+        .p1 {
+            position: sticky;
+            top: 0px;
+            background-color: white;
+            padding: 20px 10px;
+            border-bottom: 1px solid black;
+        }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -27,23 +52,35 @@
 
 
         //冒泡排序：通过遍历对相邻两个元素进行比较，较小的数放在前面
+        console.log('===========冒泡排序===========');
         var arr1 = [9, 5, 6, 7, 3, 2, 1, 4, 8];
-        var i = arr1.length;
-        var j;
-        var mid;
-        while (i > 0) {
-            for (j = 0; j < i - 1; j++) {
-                if (arr1[j] > arr1[j + 1]) {
-                    mid = arr1[j];
+        // var i = arr1.length;
+        // var j;
+        // var mid;
+        // while (i > 0) {
+        //     for (j = 0; j < i - 1; j++) {
+        //         if (arr1[j] > arr1[j + 1]) {
+        //             mid = arr1[j];
+        //             arr1[j] = arr1[j + 1];
+        //             arr1[j + 1] = mid;
+        //         }
+        //     }
+        //     i--;
+        // }
+        // console.log('冒泡排序：' + arr1);
+        console.log(arr1);
+        for (var i = 0; i < arr1.length - 1; i++) {
+            for (var j = 0; j < arr1.length - 1 - i; j++) {
+                if (arr1[j + 1] > arr1[j]) {
+                    var mid = arr1[j];
                     arr1[j] = arr1[j + 1];
                     arr1[j + 1] = mid;
                 }
             }
-            i--;
         }
-        console.log('冒泡排序：' + arr1);
+        console.log(arr1);
 
-
+        console.log('======================');
         //length 数组的长度
         console.log('数组的长度:' + arr.length);//通过length属性来获取数组的长度
         arr.length; // 3
@@ -132,17 +169,17 @@
 
 
         //去重
-        var arr = [1,1,2,2,3,3,4,5];
+        var arr = [1, 1, 2, 2, 3, 3, 4, 5];
         var newArr = [];
-        for(i = 0 ;i < arr.length ; i++){
-            if(newArr.indexOf(arr[i]) === -1){
+        for (i = 0; i < arr.length; i++) {
+            if (newArr.indexOf(arr[i]) === -1) {
                 newArr.push(arr[i]);
             }
         }
-        console.log(arr,newArr);
+        console.log(arr, newArr);
 
         //includes 查询数组是否包含某个元素，返回布尔值
-        var arr = [23,44,13,42,51];
+        var arr = [23, 44, 13, 42, 51];
         var d = arr.includes(23);
         console.log(d);
 
@@ -158,6 +195,110 @@
             }
         }
         console.log(runYear, runYear.length);
+
+
+
+        console.log('==========================');
+        //多维数组:通过行标和列标访问数组元素   数组[行标][列标]；
+        var a = [
+            [12, 99, 10],
+            [2, 9, 1],
+            [2, 98, 0]
+        ];
+        console.log(a[0][1]);
+
+
+        var arr1 = new Array(3);
+        for (var i = 0; i < arr1.length; i++) {
+            arr1[i] = new Array(2);
+            for (var j = 0; j < arr1[i].length; j++) {
+                arr1[i][j] = Math.floor(Math.random() * 10 + 1);
+            }
+        }
+        console.log(arr1);
+
+
+
+        console.log('============练习============');
+        //练习：3个同学4门成绩
+        var stu = parseInt(prompt('几个同学？'));
+        var cla = parseInt(prompt('几门课程？'));
+
+        var sco = new Array(stu);
+        for (var i = 0; i < sco.length; i++) {
+            sco[i] = new Array(cla);
+            for (var j = 0; j < sco[i].length; j++) {
+                sco[i][j] = Math.floor(Math.random() * 100 + 1);
+            }
+        }
+        console.log(sco);
+
+
+
+
+        document.write(`<table class="tb">`);
+        document.write(`<tr><td></td>`);
+        for (var i = 1; i <= cla; i++) {
+            document.write(`<td>课程${i}</td>`)
+        }
+        document.write(`</tr>`);
+
+        for (var i = 0; i < sco.length; i++) {
+            document.write(`<tr>`);
+            document.write(`<td>同学${i + 1}</td>`);
+            for (var j = 0; j < sco[i].length; j++) {
+                document.write(`<td>`);
+                document.write(sco[i][j]);
+                document.write(`</td>`);
+            }
+            document.write(`</tr>`);
+        }
+        document.write('</table');
+
+
+
+        //求总成绩
+        var sum = 0;
+        for (var i = 0; i < sco.length; i++) {
+            for (var j = 0; j < sco[i].length; j++) {
+                sum += sco[i][j];
+            }
+        }
+        document.write(`<hr>`);
+        document.write(`<p class="p1">${stu}位同学${cla}门课程的总成绩是：${sum}</p>`);
+        // console.log(`${stu}位同学${cla}门课程的总成绩是：${sum}`);
+
+
+        //求每位同学的课程平均分
+        var avgStu = new Array();
+        for (var i = 0; i < sco.length; i++) {
+            var sum = 0;
+            for (var j = 0; j < sco[i].length; j++) {
+                sum += sco[i][j];
+            }
+            avgStu.push(sum / cla);
+            document.write(`同学${i + 1}的总分是：${sum},平均成绩为：${avgStu[i].toFixed(2)}<br>`)
+            console.log(`同学${i + 1}的总分是：${sum},平均成绩为：${avgStu[i].toFixed(2)}`);
+        }
+
+
+        document.write(`<hr>`);
+        //求每门课程的平均分
+        var avgKe = new Array();
+        for (var i = 0; i < cla; i++) {
+            var sum = 0;
+            for (var j = 0; j < sco.length; j++) {
+                sum += sco[j][i];
+            }
+            avgKe.push(sum / stu);
+            document.write(`课程${i + 1}的总分是：${sum},平均成绩为：${avgKe[i].toFixed(2)}<br>`)
+            console.log(`课程${i + 1}的总分是：${sum},平均成绩为：${avgKe[i].toFixed(2)}`);
+        }
+
+        document.write(`<hr>`);
+        document.write(`<h3>成绩单：</h3>`);
+
+
 
     </script>
 </body>
