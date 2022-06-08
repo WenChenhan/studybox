@@ -13,9 +13,11 @@
     <div class="login-box">
         <h3>注册</h3>
         <div class="login-zc">
-            <input type="text" placeholder="请输入用户名" id="userName">
+            <input type="text"  id="userName" required>
+            <p class="placehold un ">用户名</p>
             <span class="hengge"></span>
-            <input type="password" placeholder="请输入密码" id="userPassword">
+            <input type="password"  id="userPassword" required>
+            <p class="up placehold">密码</p>
         </div>
         <button class="zhuche-btn" onclick="register()">注册</button>
 
@@ -28,9 +30,11 @@
             </div>
             <h3 style="color: black;margin-top:70px;z-index: 1;position: relative;">登录</h3>
             <div class="login-zc" style="border: 1px solid #f2f2f2;">
-                <input type="text" placeholder="请输入用户名" id="inputName">
+                <input type="text" id="inputName" required>
+                <p class="placehold un ">用户名</p>
                 <span class="hengge"></span>
-                <input type="password" maxlength="90"  placeholder="请输入密码" id="inputPassword">
+                <input type="password" maxlength="90"  id="inputPassword" required>
+                <p class="up placehold">密码</p>
             </div>
             <button class="zhuche-btn" onclick="login()">登录</button>
         </div>
@@ -42,6 +46,14 @@
         </div>
 
 
+    </div>
+
+
+    <div id="welcomebox">
+        <p class="wel-intem">登录成功</p>
+        <p class="wel-intem">这是个神奇的网页</p>
+        <button class="wel-but" onclick="back()">点击回到登录页面</button>
+        
     </div>
 </body>
 </html>

@@ -1,3 +1,6 @@
+
+
+
 //函数功能：点击将登录页面升起，同时将提示内容关闭,提示注册内容展示
 function goUp() {
     var onli = document.getElementById("login-dl");
@@ -36,7 +39,7 @@ function register() {
         alert('你输入的账号或密码为空！请检查！')
         return;
     }
-    if(userName.includes(un)){
+    if (userName.includes(un)) {
         alert('账户名已存在！请重新输入！');
         console.log(userName);
         console.log(userPassword);
@@ -89,8 +92,27 @@ function login() {
     alert('登录成功，感谢你的使用！')
     document.getElementById('inputName').value = '';
     document.getElementById('inputPassword').value = '';
-    document.location = 'C:/Users/27178/studybox/%E7%BD%91%E9%A1%B5%E6%90%AD%E5%BB%BA%E7%BB%83%E4%B9%A0/%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2/succesful.html';
+    //平滑移动到底部
+    var chuxian = document.getElementById('welcomebox');
+    chuxian.classList.add('chuxian');
 
+    window.scrollTo({
+        top:1200,
+        left:0,
+        behavior:"smooth"
+    });
+
+}
+
+function back(){
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"smooth"
+    });
+
+    var chuxian = document.getElementById('welcomebox');
+    chuxian.classList.remove('chuxian');
 
 
 }
