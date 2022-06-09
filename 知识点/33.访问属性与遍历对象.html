@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问属性与遍历对象</title>
+</head>
+
+<body>
+    <script>
+        //遍历对象：for in
+        /* 
+        for(var k in 对象){
+
+        }
+        */
+
+        var stu = {
+            name: '小文',
+            sex: '男',
+            bornYear: 1998,
+            tst:function(){
+                console.log('我是一个方法');
+            }
+        }
+        //访问属性
+        console.log(stu.name);
+        console.log(stu['name']);
+
+        var m = 'name';//m是一个可变的属性
+        console.log(stu.m);//undefind 无m属性
+        console.log(stu[m]);
+
+
+        console.log('-----------对象遍历----------');//数组一样可用
+        for (var k in stu) {//k为属性名
+            if(stu[k] instanceof Function){
+                stu[k]();
+                continue;
+            }
+            console.log(`${k}:${stu[k]}`);
+        }
+
+        console.log('--------------------')
+        //对象的属性也可以是一个对象
+        var xiaowen = {
+            name: '小文',
+            sex: '男',
+            bornYear: 1998,
+            pc:{
+                cpu:'I9-12900KS',
+                gpu:'RTX 3090Ti',
+                motherbord:'MSI Z690',
+                memory:'64g',
+                ssd:'980pro 2TB'
+            }
+        }
+
+        for(var k in xiaowen){
+            if(xiaowen[k] instanceof Object){
+                console.log(`${k} ==>`);
+                for(var m in xiaowen[k]){
+                    console.log(`${m} : ${xiaowen[k][m]}`);
+                }
+            }else{
+                    console.log(`${k} : ${xiaowen[k]}`);
+                }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

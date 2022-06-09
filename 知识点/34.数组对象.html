@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组对象</title>
+</head>
+
+<body>
+    <script>
+        var stus = [
+            { name: '小文', sex: '男', bornYear: 1998, },
+            { name: '小明', sex: '男', bornYear: 1999, },
+            { name: '小红', sex: '女', bornYear: 2002, },
+            { name: '小李', sex: '男', bornYear: 1993, }
+        ]
+
+        for(var i = 0 ; i < stus.length;i++){
+            console.log(`${stus[i].name}，${stus[i].sex}，${stus[i].bornYear}年出生。`);
+        }
+
+    </script>
+</body>
+
+</html>

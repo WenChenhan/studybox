@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数</title>
+</head>
+
+<body>
+    <script>
+        /*  
+        函数的三种定义方式：
+        1、function 函数名(){}
+        2、var 变量 = function(){}
+        3、匿名函数：function(){}
+        单独使用时自执行，直接调用：(function(形参){
+                                  函数体
+                                 })(实参);
+        */
+
+        //形参可以是一个函数
+        function fn(f) {
+            if (f instanceof Function) {
+                f();
+                console.log('函数已执行！');
+                return;
+            }
+            console.log('你传入的不是一个函数！');
+        }
+
+        fn(function () {
+            console.log('我是一个匿名函数，等待被执行');
+        })
+
+        console.log('-------------------');
+
+        var fn1 = function () {
+            console.log('我是一个匿名函数，等待被执行');
+        }
+        fn(fn1);
+
+
+
+        console.log('-------------------');
+        //返回值也可以是一个函数
+        function fn3() {
+            console.log('我是一个返回函数的函数！');
+            return function () {
+                console.log('我是一个被返回的函数');
+            }
+        }
+
+        fn3()();
+        console.log('-------------------');
+
+        var res = fn3();
+        res();
+
+
+
+        console.log('----------作用域---------');
+        /*   
+        作用域：减少命名冲突的问题
+
+        全局作用域：在函数外定义的变量，它的作用范围是全局。
+        局部作用域：在函数内部定义的变量，它只在局部范围有效。
+
+        在全局作用域中定义变量就是全局变量；局部作用域---> 局部变量
+
+        *在函数内部定义的变量，如果没有加 var 关键词，它将被提升为全局变量
+
+        局部变量在函数调用完后，内存自动释放；全局变量在页面关闭后才会被释放。
+        
+        
+        */
+
+        var a = 5;//全局变量，全局有效
+        console.log(a);
+
+        function logA() {
+            console.log(a);
+        }
+        logA();//函数内部可以访问全局变量
+
+
+        function logB() {
+            var b = 3;//局部变量  局部有效
+            console.log(b);
+        }
+        logB();
+
+        // console.log(b);//报错
+
+        function logCD() {
+            var c = 7;//局部变量只在自己的范围内有效 --> 内部函数可以访问外部函数的局部变量（内部函数位于外部函数的作用范围），反之不行
+            function logC() {
+                console.log(c);
+            }
+            logC();
+        }
+        logCD();
+
+
+        console.log('----------变量提升与冲突------------');
+        /*  
+        变量的提升：
+        js执行：1、预解析：会将所有涉及的变量在它【当前作用域顶部】定义；
+               2、自上而下执行
+        
+        */
+        console.log(t);//未报错，变量提升 ---> var t(全局顶部);
+        var t = 5;
+        function ct() {
+            console.log(t);//变量提升，函数会遍历语句，将未被定义的变量提升到首句进行定义 -->  var t（函数顶部）;
+            var t = 100;//发生变量名称冲突时，会优先使用函数内部的变量
+            console.log(t);
+        }
+        console.log(t);
+        ct();
+        console.log(t);
+
+
+        /*
+       函数的提升：会将所有涉及的函数提升到它【当前作用域（包括函数）的顶部】；
+        */
+        ts();//可以执行；
+        function ts() {
+            console.log('函数提升了！');
+        }
+
+        //    ts2(); //报错，变量定义的函数  会将变量ts2提升到顶部，函数不会提升
+        var ts2 = function () {
+            console.log('我是变量定义的函数！');
+        }
+        ts2();
+
+
+
+
+        console.log('----------作用域链---------');
+        //代码执行时会优先在当前作用域找，未找到再往上级作用域找
+        //变量：当前作用域  ---> 上级作用域 --->  再上层作用域 ... ---> 报错
+        var a1 = '我是全局变量';
+
+        function zyyl() {
+            var a2 = '我是函数1的变量';
+
+            function zyyl2() {
+                var a3 = '我是函数2的变量';
+
+                console.log(a1);
+                console.log(a2);
+                console.log(a3);
+                // console.log(a4);报错，一直往上找到顶层都没有找到
+            }
+            zyyl2();
+        }
+        zyyl();
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

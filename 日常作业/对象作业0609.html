@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('-------------------------');
+        var goods = {
+            name: '手机',
+            number: 20,
+            price: 8000,
+            getGoodsInfo: function () {
+                console.log(`商品名称:${this.name}\n数量：${this.number}\n价格：${this.price}元`);
+            }
+        }
+
+        goods.getGoodsInfo();
+
+
+        console.log('-------------------------');
+        var pc = new Object();
+        pc.logo = '微星';
+        pc.id = 'I9-12900KS';
+        pc.number = 10;
+        pc.price = 12000;
+        pc.getPcInfo = function () {
+            console.log(`品牌:${this.logo}\n型号：${this.id}\n数量：${this.number}\n价格：${this.price}元`);
+        }
+
+        pc.getPcInfo();
+
+
+        console.log('-------------------------');
+
+        function Rectangle(longth, width) {
+            this.longth = longth || 20;
+            this.width = width || 10;
+        }
+
+        Rectangle.prototype.getArea = function () {
+            return this.longth * this.width;
+        }
+
+        Rectangle.prototype.getPerimeter = function () {
+            return (this.longth + this.width) * 2;
+        }
+
+        var rec1 = new Rectangle(10, 5);
+        console.log(rec1);
+        console.log(`它面积是${rec1.getArea()}，周长是${rec1.getPerimeter()}!`);
+
+
+
+    </script>
+</body>
+
+</html>

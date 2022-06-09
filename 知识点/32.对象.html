@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+
+<body>
+    <script>
+        /*  
+        对象 ：js没有类的概念
+            类：众多对象抽取出来的模板 ：1、特征  --> 变量  -- 属性  2、行为 --> 函数  -- 方法   
+
+            对象：这类事物实例化出的一个具体的东西  
+
+            调用：
+            对象.属性
+            对象.方法()
+
+            1、自定义对象
+            2、内置对象：数组、字符串...
+            3、dom
+        */
+
+        //1、字面量对象：
+        /* 
+        var 对象名 = {
+            属性名：值，        key -- value 键值对
+            属性名：值，
+            属性名：值,
+            方法名:function(){
+            }
+        }
+        this关键词，指向的是当前的对象
+        */
+        var stuInfo = {
+            name: '小文',
+            sex: '男',
+            bornYear: 1998,
+            getAge: function () {
+                var y = new Date().getFullYear();
+                return y - this.bornYear;//this关键词，指向的是当前的对象
+            },
+            say: function (n) {
+                var age = this.getAge();
+                console.log(`我今年${age}岁了！${n}年后我${age + n}岁！`);
+            }
+        }
+
+        console.log(typeof stuInfo);
+        console.log(stuInfo);
+        console.log(stuInfo.name);
+        console.log(stuInfo.getAge());
+        stuInfo.say(5);
+
+
+        console.log('-----------------------------');
+        //2、Object的方式创建：
+        /* 
+        var 属性名 = new Object();
+        属性名.属性 = 值;
+        属性名.属性 = 值;
+        属性名.方法 = function(){};
+        */
+        var running = function () {
+            console.log(`${this.name} is running...`);
+        }
+
+        var obj = new Object();
+        obj.name = 'xiaowen';
+        obj.sex = 'man';
+        obj.run = running;
+
+
+        obj.run();
+        running.call(obj);//函数的call方法,第一个参数就是需要绑定的this变量，第二个是函数本身的参数 【apply第二个参数是数组】
+
+
+
+        console.log('------------------------------------');
+        //3、构造函数  创建对象
+        /* 
+        构造函数使用大驼峰命名
+
+        function 名字(name,sex,born){
+            this.name = name;
+            this.age = age;
+            this.born = born;
+            this.getAge = function(){
+                var y = new Date().getFullYear();
+                return y - this.born;
+            }
+
+        }
+        */
+
+        function Student(name, sex, born) {
+            this.name = name || '匿名';//默认值
+            this.sex = sex || '未知';
+            this.born = born || 2022;
+        }
+
+        Student.prototype.getAge = function () {   //共同的方法放置在上级原型链中，不占用多余内存
+            var y = new Date().getFullYear();
+            return y - this.born;
+        }
+
+        var xiaowen = new Student('小文', '男', 1998);//定义一个新的对象
+        console.log(typeof xiaowen);//object
+        var xiaomin = new Student('小明', '男', 2000);
+        var banzang = new Student();
+        console.log(`${xiaowen.name}今年${xiaowen.getAge()}岁了！`);
+        console.log(`${xiaomin.name}今年${xiaomin.getAge()}岁了！`);
+        console.log(`${banzang.name}今年${banzang.getAge()}岁了！`);
+
+        //instanceof 可以判断【构造函数创建的对象】的类
+        console.log(xiaowen instanceof Student);
+        console.log(banzang instanceof Student);
+        console.log(xiaowen instanceof Object);//所有对象都属于Object对象
+
+        //原型链  xiaowen & xiaomin & banzang-->  Student --> Object
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
